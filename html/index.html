@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradingCard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="Main">
+        <div id="TopHead">
+            <header>
+                <img src="../pictures/logo.jpg" alt="" height = "100px" class = "logo">
+                <h1>TradingCard.com</h1>
+            </header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="login.html">Login</a>
+                <a href="login.html">Login</a>
+                <a href="login.html">Login</a>
+
+            </nav>
+        </div>
+
+        <div id="MainBlock">
+
+            <div id="filter">
+                <h1>This is the filter</h1>
+                <h2>block</h2>
+
+                <form action="" oninput="x.value = parseInt(priceRange.value)">
+                    <fieldset>
+                        <legend>Suppliers</legend>
+                        <input type="checkbox" name="supplier1" id="OOP" value="OOP">
+                        <label for="OOP">OOP</label><br>
+                        <input type="checkbox" name="supplier2" id="CO" value="CO">
+                        <label for="CO">CO</label><br>
+                        <input type="checkbox" name="supplier3" id="R&L" value="R&L">
+                        <label for="R&L">R&L</label><br>
+                    </fieldset><br>
+                    <!--<label for="suppliers">Choose suppliers</label><br>
+                    <select id="suppliers" name="suppliers" size="2" multiple>
+                        <option value="OOP">OOP</option>
+                        <option value="CO">CO</option>
+                        <option value="R&L">R&L</option>
+                        <option value="ADS">ADS</option>
+                        <option value="WDB">WDB</option>
+                    </select><br>-->
+
+                    <fieldset>
+                        <legend>Price</legend>
+                        <label for="priceRange">Price filter:</label>
+                        <output name="x" for="priceRange">69</output>$<br>
+                        0<input type="range" name="priceRange" id="priceRange" value="69">100<br>
+                    </fieldset>
+                    <br>
+
+                    <input type="submit" onclick="alert('YO!!, well done you know how to filter\nYou entered: ' + priceRange.value + ' as the price')" value="Filter">
+                </form>
+            </div>
+
+            <div id="itemBlock">
+
+                <article class="productItem">
+                    <img src="../pictures/placeholderCard.jpg" alt="">
+                    <h1>PlaceHolder Title, Rick Asley Card</h2>
+                    <h2>[Price] 69,99 $</h2>
+                    <h3>Description</h3>
+                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
+                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
+                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
+                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
+                    <br><br>
+                    <form action="">
+                        <input type="number" name="amount" id="amount" min="1" value="1">
+                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
+                    </form>
+                </article>
+
+                <article class="productItem">
+                    <img src="../pictures/placeholderCard.jpg" alt="">
+                    <h1>PlaceHolder Title, Rick Asley Card</h2>
+                    <h2>[Price] 69,99 $</h2>
+                    <h3>Description</h3>
+                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
+                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
+                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
+                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
+                    <br><br>
+                    <form action="">
+                        <input type="number" name="amount" id="amount" min="1" value="1">
+                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
+                    </form>
+                </article>
+
+                <article class="productItem">
+                    <img src="../pictures/placeholderCard.jpg" alt="">
+                    <h1>PlaceHolder Title, Rick Asley Card</h2>
+                    <h2>[Price] 69,99 $</h2>
+                    <h3>Description</h3>
+                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
+                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
+                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
+                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
+                    <br><br>
+                    <form action="">
+                        <input type="number" name="amount" id="amount" min="1" value="1">
+                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
+                    </form>
+                </article>
+
+                <article class="productItem">
+                    <img src="../pictures/placeholderCard.jpg" alt="">
+                    <h1>PlaceHolder Title, Rick Asley Card</h2>
+                    <h2>[Price] 69,99 $</h2>
+                    <h3>Description</h3>
+                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
+                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
+                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
+                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
+                    <br><br>
+                    <form action="">
+                        <input type="number" name="amount" id="amount" min="1" value="1">
+                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
+                    </form>
+                </article>
+
+                <article class="productItem">
+                    <img src="../pictures/placeholderCard.jpg" alt="">
+                    <h1>PlaceHolder Title, Rick Asley Card</h2>
+                    <h2>[Price] 69,99 $</h2>
+                    <h3>Description</h3>
+                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
+                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
+                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
+                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
+                    <br><br>
+                    <form action="">
+                        <input type="number" name="amount" id="amount" min="1" value="1">
+                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
+                    </form>
+                </article>
+
+                <article class="productItem">
+                    <img src="../pictures/placeholderCard.jpg" alt="">
+                    <h1>PlaceHolder Title, Rick Asley Card</h2>
+                    <h2>[Price] 69,99 $</h2>
+                    <h3>Description</h3>
+                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
+                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
+                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
+                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
+                    <br><br>
+                    <form action="">
+                        <input type="number" name="amount" id="amount" min="1" value="1">
+                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
+                    </form>
+                </article>
+
+                
+                
+
+            </div>
+        </div>
+        <footer>
+            <p>Authors: Sander Bakker and Matthijs Bonke</p>
+            <p>Students from the Technical University of Delft</p>
+            <p style="float: right;">Contact us <a href="mailto:m.s.bonke@student.tudelft.nl">Here</a></p>
+            
+        </footer>
+    </div>
+</body>
+</html>

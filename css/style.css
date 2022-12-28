@@ -1,0 +1,109 @@
+body {
+    background-color: orange;
+}
+
+#Main {
+    background-color: white;
+    max-width: 1920px;
+    margin: auto;
+    min-height: calc(100vh - 16px);
+}
+
+
+#TopHead {
+    position: sticky;
+    top:0;
+    background-color: white;
+}
+
+header{
+    border: 2px black solid;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav {
+    border: 2px black solid;
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+}
+
+nav a {
+    border: 1px red solid;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+#MainBlock {
+    overflow: hidden;
+}
+
+#filter {
+    border: 1px solid purple;
+    float: left;
+    height: 100%;
+    padding: 5px;
+}
+
+#itemBlock {
+    border: 1px solid red;
+    float: left;
+}
+
+.productItem {
+    border: 3px dotted blue;
+    overflow:hidden;
+    margin:10px;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.productItem > *{
+    margin: 10px;
+}
+.productItem > img{
+    float: left
+}
+
+#itemBlock img {
+    width:300px;
+}
+
+
+
+footer {
+    border: 2px black solid;
+    overflow: hidden;
+    bottom: 0;
+    display: block;
+    position: sticky;
+    background-color: white;
+    
+}
+
+footer p{
+    border: 1px red solid;
+    float: left;
+    width: auto;
+    margin: 5px;
+}
+
+img.logo{
+    float: left;
+}
+
+
+/* login page inclusive*/
+
+#loginBlock {
+    width: max-content;
+    margin:auto;
+    border: 5px solid black;
+    padding: 5px;
+    text-shadow: 2px 2px 2px orange;
+    box-shadow: 2px 2px 2px orange;
+    
+}
