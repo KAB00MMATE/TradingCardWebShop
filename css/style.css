@@ -98,6 +98,19 @@ img.logo{
 
 /* login page inclusive*/
 
+
+#MainBlockLogin {
+    overflow: hidden;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: calc(100vh - 212px); /* 214 is with pixels from border change this if you gonna change border sizes */
+    align-items: center;
+    border: 2px solid black;
+    margin: auto;
+}
+
 #loginBlock {
     width: max-content;
     margin:auto;
@@ -105,5 +118,4 @@ img.logo{
     padding: 5px;
     text-shadow: 2px 2px 2px orange;
     box-shadow: 2px 2px 2px orange;
-    
 }
