@@ -119,3 +119,23 @@ img.logo{
     text-shadow: 2px 2px 2px orange;
     box-shadow: 2px 2px 2px orange;
 }
+
+/* account related page*/
+
+#accountSpacer {
+    max-width: 5%;
+    width: 10%;
+    background-color: lightskyblue;
+    min-height: 500px;
+    float:left;
+    border: 2px solid red
+
+    
+}
+
+#accountBlock{
+ 
+    float:left;
+    border: 2px solid black;
+    width: calc(90% - 12px);
+}
