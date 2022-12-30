@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>login</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -61,34 +61,48 @@
             </nav>
         </div>
 
-        <div id="MainBlockLogin">
-            <div id="loginBlock">
-                <form action="index.html" autocomplete="on">
-                    <h1>Creating new account</h1>
-                    <h2>Fill in your Information</h2>
-                    <fieldset>
-                        <legend>First Name</legend>
-                        <input type="text" name="firstName_user" id="firstName_user" autofocus required placeholder="Alice">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Last Name</legend>
-                        <input type="text" name="lastName_user" id="lastName_user" required placeholder="Bob">
-                    </fieldset>
-                    <fieldset>
-                        <legend>E-mail</legend>
-                        <input type="email" name="email_user" id="email_user" required placeholder="bob@gmail.com">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Password</legend>
-                        <input type="password" name="password_user" id="password_user" required placeholder="Welcome1">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Repeat Password</legend>
-                        <input type="password" name="password_user2" id="password_user2" required placeholder="Welcome1">
-                    </fieldset>
-                    <br>
-                    <input type="submit" onclick="alert('Your info:\nE-mail: '+ email_user.value+'\nPassword: ' + password_user.value)" value="Create new account">
-                </form>
+        <div id="MainBlock">
+            <div id="accountSpacer">
+
+            </div>
+            <div id="accountBlock">
+                <h1>Shopping Card</h1>
+                <div>
+                    <h2>Items currently in card</h2>
+                    <div class="productItem" id="accountItem">
+                        <img src="../pictures/placeholderCard.jpg" alt="" height="200px"> <h2>item 1</h2> 
+                        <a href="product.html">click here</a>
+                        <p>Amount: 2x</p>
+                    </div>
+                    <div class="productItem" id="accountItem">
+                        <img src="../pictures/placeholderCard.jpg" alt="" height="200px"> <h2>item 2</h2> 
+                        <a href="product.html">click here</a>
+                        <p>Amount: 4x</p>
+                    </div>
+                    <div class="productItem" id="accountItem">
+                        <img src="../pictures/placeholderCard.jpg" alt="" height="200px"> <h2>item 3</h2> 
+                        <a href="product.html">click here</a>
+                        <p>Amount: 6x</p>
+                    </div>
+                    <div class="productItem" id="accountItem">
+                        <img src="../pictures/placeholderCard.jpg" alt="" height="200px"> <h2>item 4</h2> 
+                        <a href="product.html">click here</a>
+                        <p>Amount: 2x</p>
+                    </div>
+                    <div class="productItem" id="accountItem">
+                        <img src="../pictures/placeholderCard.jpg" alt="" height="200px"> <h2>item 5</h2> 
+                        <a href="product.html">click here</a>
+                        <p>Amount: 4x</p>
+                    </div>
+                    <div class="productItem" id="accountItem">
+                        <img src="../pictures/placeholderCard.jpg" alt="" height="200px"> <h2>item 6</h2> 
+                        <a href="product.html">click here</a>
+                        <p>Amount: 6x</p>
+                    </div>
+                </div>
+            </div>
+            <div id="accountSpacer" style="float: right;">
+
             </div>
         </div>
         
