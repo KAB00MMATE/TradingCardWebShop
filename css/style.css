@@ -25,12 +25,12 @@ html {
 
 body {
     max-width: 1920px;
-    min-width: 1000px;
+    /* min-width: 1000px; */
     margin: 0;
     background-color: var(--clr-main-orange);
     font-family: 'Inter', sans-serif;
-
     min-height: calc(100vh - 30px); /* Account for footer */
+    margin:auto;
 }
 
 .border-30px{
@@ -72,6 +72,12 @@ header{
     align-items: center;
     padding: 5px;
     max-height: max-content;
+    z-index: 1;
+}
+
+#main {
+    position: relative;
+    z-index: 0;
 }
 
 #logo {
@@ -404,8 +410,8 @@ img.logo{
     width: 0;
 	height: 0;
 	border-right: 50vw solid transparent;
-	border-top: 100vh solid #555;
-    position: absolute;
+	border-top: 100vh solid var(--clr-main-brown);
+    position: fixed;
     z-index: 	-1;
     top:0;
     left:0;
@@ -414,9 +420,9 @@ img.logo{
 .triangle-up {
     width:0;
     height:0;
-    border-bottom: 100vh solid #555;
+    border-bottom: 100vh solid var(--clr-main-brown);
     border-left: 50vw solid transparent;
-    position: absolute;
+    position: fixed;
     z-index: 	-1;
     right: 0;
 

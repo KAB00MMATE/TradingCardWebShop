@@ -10,40 +10,45 @@
 </head>
 
 <body>
-    <header>
-        <a href="#">
-            <img src="/pictures/logo.jpg" width="100px" alt="" id="logo">
-        </a>
-        <div class="border-30px" id="search">
-            <input type="search" name="" id="" placeholder="Search">
+    <div id="main">
+        <div class="triangle-down"></div>
+        <div class="triangle-up"></div>
+        <header>
             <a href="#">
-                <img class="icon" src="/icons/search-alt.png" alt="search button">
+                <img src="../pictures/logo.jpg" width="100px" alt="logo" id="logo">
             </a>
+            <div class="border-30px" id="search">
+                <input type="search" name="" id="" placeholder="Search">
+                <a href="#">
+                    <img class="icon" src="../icons/search-alt.png" alt="search button">
+                </a>
+            </div>
+            <div id="header--menu">
+                <a href="#">
+                    <img class="icon" src="../icons/shopping-cart-icon.png" alt="">
+                </a>
+                <a href="#" onclick="dropdownNav()">
+                    <img class="icon" id="icon--hamburger" src="../icons/hamburger_menu.svg" alt="">
+                </a>
+            </div>
+        </header>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="newUser.html">New Account</a>
+            <a href="template.html">New template</a>
+            <a href="login.html">Login</a>
+            <a href="account.html">Account</a>
+        </nav>
+        <div id="main_body">
+            main body
         </div>
-        <div id="header--menu">
-            <a href="#">
-                <img class="icon" src="/icons/shopping-cart-icon.png" alt="">
-            </a>
-            <a href="#">
-                <img class="icon" id="icon--hamburger" src="/icons/hamburger_menu.svg" alt="">
-            </a>
-        </div>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="newUser.html">New Account</a>
-        <a href="template.html">new template</a>
-        <a href="login.html">Login</a>
-        <a href="account.html">Account</a>
-    </nav>
-    <div id="main_body">
-        main body
+        <footer>
+            <p>Authors: Sander Bakker and Matthijs Bonke</p>
+            <p>Students from the Technical University of Delft</p>
+            <p style="float: right;">Contact us <a href="mailto:m.s.bonke@student.tudelft.nl">here</a></p>
+        </footer>
     </div>
-    <footer>
-        <p>Authors: Sander Bakker and Matthijs Bonke</p>
-        <p>Students from the Technical University of Delft</p>
-        <p style="float: right;">Contact us <a href="mailto:m.s.bonke@student.tudelft.nl">here</a></p>
-    </footer>
+    <script src="../javaScript/myScript.js"></script>
 </body>
 
 </html>
