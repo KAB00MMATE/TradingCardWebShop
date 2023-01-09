@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
+
 body {
     background-color: orange;
+    font-family: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+:root{
+    --clr-main-brown: #4D3434;
+    --clr-main-orange: #CF6529D1;
+    --clr-main-dark: #2A3036;
+
+    --clr-light: white;
 }
 
 #Main {
-    background-color: white;
+    background-color: var(--clr-light);
     max-width: 1920px;
     margin: auto;
     min-height: calc(100vh - 16px);
@@ -13,7 +32,7 @@ body {
 #TopHead {
     position: sticky;
     top:0;
-    background-color: white;
+    background-color: var(--clr-light);
 }
 
 header{
