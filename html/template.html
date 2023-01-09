@@ -29,15 +29,19 @@
             </a>
         </div>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="newUser.html">New Account</a>
-        <a href="template.html">new template</a>
-        <a href="login.html">Login</a>
-        <a href="account.html">Account</a>
+
+    <nav id="nav">
+        <div class="nav--link">
+            <a href="#">Account</a>
+            <img id="nav--account-caret" class="icon caret clickable" src="/icons/drop-down-icon.svg" alt="caret-down">
+        </div>
+        <a class="nav--link" href="#">Login</a>
+        <a class="nav--link" href="#">Register</a>
     </nav>
+
     <div id="main_body">
-        main body
+        <!-- https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file -->
+        <!-- <iframe src="/html/login.html" seamless></iframe> -->
     </div>
     <footer>
         <p>Authors: Sander Bakker and Matthijs Bonke</p>
@@ -46,4 +50,5 @@
     </footer>
 </body>
 
+<script src="/javaScript/myScript.js"></script>
 </html>

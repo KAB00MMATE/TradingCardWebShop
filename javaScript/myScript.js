@@ -1,13 +1,20 @@
 function dropdownNav() {
-    
-    if (document.getElementById("nav").style.display == "none"){
-        document.getElementById("dropdownlogo").style.transform = 'rotate(180deg)';
-        
-        document.getElementById("nav").style.display = "block";
-    }else{
-        document.getElementById("dropdownlogo").style.transform = 'rotate(0)';
-        document.getElementById("nav").style.display = "none";
+
+    let nav = document.getElementById("nav");
+    let iconHamburger = document.getElementById("icon--hamburger");
+
+    if (nav.style.maxHeight == "0px") {
+        iconHamburger.style.transform = "rotate(90deg)";
+        nav.style.maxHeight = "100px";
+
+    } else {
+        iconHamburger.style.transform = "rotate(0)";
+        nav.style.maxHeight = "0px";
     }
-    
-    
 }
+
+document.getElementById("icon--hamburger").addEventListener("click", dropdownNav);
+document.getElementById("nav--account-caret").addEventListener("click", function () {
+    console.log("test!!");
+});
+
