@@ -1,5 +1,4 @@
 function dropdownNav() {
-
     let nav = document.getElementById("nav");
     let iconHamburger = document.getElementById("icon--hamburger");
 
