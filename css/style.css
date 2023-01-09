@@ -18,14 +18,19 @@ body {
 
 header{
     border: 2px black solid;
-    overflow: hidden;
-    text-align: center;
+    display: block;
+}
+
+header > *{
+    display:inline-block;
+    margin: 5px;
+    
 }
 
 nav {
     border: 2px black solid;
-    display: block;
-
+    /* display: block; */
+    display: none;
     padding: 5px;
     text-align: right;
 }
@@ -102,7 +107,7 @@ footer p{
 }
 
 img.logo{
-    float: left;
+    text-align: left;
 }
 
 
@@ -256,3 +261,60 @@ img.logo{
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: white;}
+
+
+  .dropdownHeader{
+    border: 2px solid black;
+    margin: -2px;
+    position: relative;
+    float:right;
+
+  }
+
+  .dropdownHeader:hover{
+    border:2px solid red;
+    margin: -2px;
+  }
+
+  
+
+  .dropdownHeaderContent{
+    display: none;
+    /*overflow: hidden;*/
+    position: absolute;
+    right:-2px;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: white;
+  }
+
+  .dropdownHeaderContent h1{
+    display: inline-block;
+  }
+
+  .dropdownHeader:hover .dropdownHeaderContent{
+    display: block;
+  }
+
+.triangle-down {
+    width: 0;
+	height: 0;
+	border-right: 50vw solid transparent;
+	border-top: 100vh solid #555;
+    position: absolute;
+    z-index: 	-1;
+    top:0;
+    left:0;
+}
+
+.triangle-up {
+    width:0;
+    height:0;
+    border-bottom: 100vh solid #555;
+    border-left: 50vw solid transparent;
+    position: absolute;
+    z-index: 	-1;
+    right: 0;
+
+}
