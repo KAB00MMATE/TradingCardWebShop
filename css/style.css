@@ -1,24 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
 
-body {
-    background-color: orange;
-    font-family: 'Inter', sans-serif;
-}
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-
-
 :root{
     --clr-main-brown: #4D3434;
     --clr-main-orange: #CF6529D1;
     --clr-main-dark: #2A3036;
 
+    --clr-grey: #DFDFDF;
     --clr-light: white;
+    
+
+    --max-width: 1920px;
+}
+
+html {
+    background: var(--clr-main-orange);
+}
+
+
+body {
+    max-width: 1920px;
+    min-width: 1000px;
+    margin: 0;
+    background-color: var(--clr-main-orange);
+    font-family: 'Inter', sans-serif;
+
+    min-height: calc(100vh - 30px); /* Account for footer */
+}
+
+.border-30px{
+    border-radius: 30px;
+}
+
+#search {
+    background-color: var(--clr-light);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+}
+
+#search input{
+    border: none;
+    margin-left: 2em;
+    outline: none;
+    flex-grow: 1;
+    
+    font-size:large;
+    
+}
+
+#search .icon {
+    height: 35px;
+    margin-right: 20px;
+}
+
+
+header{
+    background-color: var(--clr-grey);
+    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    max-height: max-content;
+}
+
+#logo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+#header--menu{
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 3em;
+    margin-right: 3em;
 }
 
 #Main {
@@ -35,15 +102,21 @@ body {
     background-color: var(--clr-light);
 }
 
-header{
-    border: 2px black solid;
-    display: block;
-}
 
-header > *{
+
+/* header > *{
     display:inline-block;
     margin: 5px;
     
+} */
+
+.icon {
+    height: 30px;
+}
+
+
+#icon--hamburger{
+    border-top: 5px;
 }
 
 nav {
@@ -105,24 +178,35 @@ nav a {
 
 
 footer {
-    border: 2px black solid;
     overflow: hidden;
     bottom: 0;
     display: block;
-    position: sticky;
-    background-color: white;
-    
+    position: fixed;
+    width: 100%;
+    max-width: var(--max-width);
+    background-color: var(--clr-main-dark);
+    color: var(--clr-light);
+    text-decoration: none;
 }
 
 footer p{
-    border: 1px red solid;
     float: left;
     width: auto;
     margin: 5px;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 5px;
-    
+
+    font-weight: 200;
+}
+
+footer p a{
+    color: var(--clr-light);
+}
+
+footer p a:hover{
+    font-style: italic;
+    font-weight: 400;
 }
 
 img.logo{
