@@ -38,7 +38,10 @@ document.getElementById("nav--account").addEventListener("mouseenter", function 
 });
 
 
-document.getElementById("drop-down-container").addEventListener("mouseleave", function () {
+document.getElementById("drop-down-container").addEventListener("mouseleave", 
+
+function() {
     collapseElement(document.getElementById("account--sub-menu"));
-    document.getElementById("nav").style.overflow = 'hidden';
+    setTimeout(function() {document.getElementById("nav").style.overflow = 'hidden';}, 300);
+    
 });
