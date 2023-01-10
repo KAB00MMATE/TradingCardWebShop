@@ -36,35 +36,37 @@
         </div>
         <div class="main" id="main-nav">
             <nav id="nav">
-                <a id="nav--account" class="nav--link" href="#">Account <img class="icon caret clickable" src="../icons/drop-down-icon.svg" alt="caret-down"></a>
+
+                           
                 <a class="nav--link" href="#">Login</a>
                 <a class="nav--link" href="#">Register</a>
+                <div id="drop-down-container">
+                    <a id="nav--account" class="nav--link" href="#">Account <img class="icon caret clickable"
+                        src="../icons/drop-down-icon.svg" alt="caret-down"></a>
+                    <div id="account--sub-menu" class="drop-down">
+                        <a class="drop-down-btn">
+                            <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
+                            <p>New Offer</p>
+                        </a>
+                        <a class="drop-down-btn">
+                            <img src="../icons/graph.svg" alt="analytics" class="icon">
+                            <p>Analytics</p>
+                        </a>
+                        <a class="drop-down-btn">
+                            <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
+                            <p>History</p>
+                        </a>
+                        <a class="drop-down-btn">
+                            <img src="../icons/cog.svg" alt="settings" class="icon">
+                            <p>Settings</p>
+                        </a>
+                    </div>
+                </div>    
             </nav>
         </div>
-
-            <div id="account--sub-menu" class="drop-down">
-                <a class="drop-down-btn">
-                    <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
-                    <p>New Offer</p>
-                </a>
-                <a class="drop-down-btn">
-                    <img src="../icons/graph.svg" alt="analytics" class="icon">
-                    <p>Analytics</p>
-                </a>
-                <a class="drop-down-btn">
-                    <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
-                    <p>History</p>
-                </a>
-                <a class="drop-down-btn">
-                    <img src="../icons/cog.svg" alt="settings" class="icon">
-                    <p>Settings</p>
-                </a>
-            </div>
-        </nav>
-
         <div class="main" id="main-body">
             <!-- https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file -->
-        <!-- <iframe src="/html/login.html" seamless></iframe> -->
+            <!-- <iframe src="/html/login.html" seamless></iframe> -->
         </div>
 
         <div class="main" id="main-footer">
@@ -77,4 +79,5 @@
     </div>
     <script src="../javaScript/myScript.js"></script>
 </body>
+
 </html>
