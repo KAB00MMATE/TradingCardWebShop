@@ -238,6 +238,9 @@ iframe[seamless] {
 
     border: solid 1px black;
     border-radius: 10px;
+
+    background-color: var(--clr-light);
+    color: black;
     
     cursor: pointer;
 }
