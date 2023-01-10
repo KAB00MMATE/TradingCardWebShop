@@ -43,13 +43,18 @@ html {
 
 
 body {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     /* min-width: 1000px; */
     margin: 0;
     background-color: var(--clr-main-orange);
     font-family: 'Inter', sans-serif;
     min-height: calc(100vh - 30px); /* Account for footer */
-    margin:auto;
+    /* margin:auto; */
+    width: 100%;
+}
+
+#main-body{
+    height: 200vh;
 }
 
 
@@ -82,7 +87,7 @@ body {
 
 
 header {
-    background-color: var(--clr-grey);
+    /* background-color: var(--clr-grey); */
 
     display: flex;
     flex-direction: row;
@@ -92,11 +97,31 @@ header {
     padding: 5px;
     max-height: max-content;
     z-index: 1;
+    /* position: sticky;
+    top:0; */
+}
+
+#main-header {
+    background-color: var(--clr-grey);
+    position: sticky;
+    top:0;
 }
 
 #main {
     position: relative;
     z-index: 0;
+    /* margin:auto;
+    max-width: 1920px; */
+    width: 100%;
+}
+
+.main{
+    width: 100%;
+}
+
+.main > *{
+    margin: 0 auto;
+    max-width: var(--max-width);
 }
 
 #logo {
@@ -167,7 +192,7 @@ iframe[seamless] {
 
 #nav {  
     width: 100%;
-    background-color: var(--clr-transparent);
+    /* background-color: var(--clr-transparent); */
     display: flex;
     justify-content: right;
     padding-inline: 5px;
@@ -176,6 +201,15 @@ iframe[seamless] {
     overflow: hidden;
     max-height: 0px;
     transition: max-height 300ms 0s ease-in-out;
+
+    /* position: sticky;
+    top:84px;  header height */
+}
+
+#main-nav{
+    background-color: var(--clr-transparent);
+    position: sticky;
+    top:84px;  /* header height */
 }
 
 .drop-down {
@@ -321,14 +355,16 @@ nav a {
 
 footer {
     overflow: hidden;
-    bottom: 0;
     display: block;
-    position: fixed;
     width: 100%;
     max-width: var(--max-width);
-    background-color: var(--clr-main-dark);
+    /* background-color: var(--clr-main-dark); */
     color: var(--clr-light);
     text-decoration: none;
+}
+
+#main-footer {
+    background-color: var(--clr-main-dark);
 }
 
 footer p {
@@ -572,4 +608,24 @@ img.logo {
     z-index: 	-1;
     right: 0;
 
+}
+
+#fake-header{
+    height: 84px; /* this is the same heigth as the header */
+    width: 100%;
+    background-color: var(--clr-grey);
+    position: fixed;
+    z-index: -1;
+    top:0;
+    left:0;
+}
+
+#fake-footer{
+    height: 30px;
+    width: auto;
+    background-color: var(--clr-main-dark);
+    bottom:-30px;
+    /* left:0; */
+    right: 0;
+    position: sticky;
 }
