@@ -13,13 +13,12 @@ function dropdownNav() {
     let nav = document.getElementById("nav");
     let iconHamburger = document.getElementById("icon--hamburger");
 
-    if (nav.style.maxHeight == "0px") {
-        iconHamburger.style.transform = "rotate(90deg)";
-        expandElement(nav, 60);
-
-    } else {
+    if (nav.style.maxHeight == "60px") {
         iconHamburger.style.transform = "rotate(0)";
         collapseElement(nav);
+    } else {
+        iconHamburger.style.transform = "rotate(90deg)";
+        expandElement(nav, 60);
     }
 }
 
@@ -31,8 +30,6 @@ function toggleDiv(toToggle, maxHeight) {
         collapseElement(toToggle);
     }
 }
-
-
 
 document.getElementById("icon--hamburger").addEventListener("click", dropdownNav);
 document.getElementById("nav--account").addEventListener("mouseenter", function () {
