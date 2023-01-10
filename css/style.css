@@ -34,9 +34,6 @@
     border-radius: 30px;
 }
 
-
-
-
 html {
     background: var(--clr-main-orange);
 }
@@ -257,14 +254,14 @@ iframe[seamless] {
 }
 
  
-nav > *:hover {
+nav a:hover {
     background-color: var(--clr-dark-blue);
     color: var(--clr-light);
 }
 
-nav > *:hover a{
+/* nav > *:hover a{
     color: var(--clr-light);
-}
+} */
 
 
 /*

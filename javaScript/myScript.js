@@ -35,7 +35,7 @@ function toggleDiv(toToggle, maxHeight) {
 
 
 document.getElementById("icon--hamburger").addEventListener("click", dropdownNav);
-document.getElementById("nav--account-caret").addEventListener("mouseenter", function () {
+document.getElementById("nav--account").addEventListener("mouseenter", function () {
     expandElement(document.getElementById("account--sub-menu"), 500);
 });
 document.getElementById("account--sub-menu").addEventListener("mouseleave", function () { collapseElement(document.getElementById("account--sub-menu")); });
