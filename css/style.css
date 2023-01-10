@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&display=swap');
 
 *,
 *::before,
@@ -174,6 +174,45 @@ iframe[seamless] {
     overflow: hidden;
     max-height: 0px;
     transition: max-height 300ms 0s ease-in-out;
+}
+
+.drop-down {
+    display: grid;
+    background-color: #ffffff64;
+    width: 180px;
+
+    position: absolute;
+    top: 150px;
+    right: 160px;
+    border-radius: 15px;
+
+    max-height: 0px;
+    transition: max-height 300ms ease;
+    overflow: hidden;
+}
+.drop-down-btn{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1em;
+    width: auto;
+    padding: 10px;
+    max-height: 50px;
+    overflow: hidden;
+    margin: 10px;
+
+    border: solid 1px black;
+    border-radius: 10px;
+    
+    cursor: pointer;
+}
+
+.drop-down-btn img {
+    height: 20px;
+}
+
+.drop-down-btn p {
+    font-weight: lighter;
 }
 
 .clickable:hover {

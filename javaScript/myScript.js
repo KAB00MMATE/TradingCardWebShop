@@ -12,8 +12,16 @@ function dropdownNav() {
     }
 }
 
+function dropDownDiv(toDropDown, toHeight){
+    if (toDropDown.style.maxHeight == "0px"){
+        let calcHeight = toHeight + "px";
+        toDropDown.style.maxHeight = calcHeight;
+    }
+    else {
+        toDropDown.style.maxHeight = "0px";
+    }
+}
+
 document.getElementById("icon--hamburger").addEventListener("click", dropdownNav);
 document.getElementById("nav--account-caret").addEventListener("click", function () {
-    console.log("test!!");
-});
-
+    dropDownDiv(document.getElementById("account--sub-menu"), 500);});
