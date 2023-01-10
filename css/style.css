@@ -34,9 +34,6 @@
     border-radius: 30px;
 }
 
-
-
-
 html {
     background: var(--clr-main-orange);
 }
@@ -218,13 +215,15 @@ iframe[seamless] {
     width: 180px;
 
     position: absolute;
-    top: 150px;
+    top: 100px;
     right: 160px;
     border-radius: 15px;
 
     max-height: 0px;
     transition: max-height 300ms ease;
     overflow: hidden;
+
+    margin-top: 50px;
 }
 .drop-down-btn{
     display: flex;
@@ -291,14 +290,14 @@ iframe[seamless] {
 }
 
  
-nav > *:hover {
+nav a:hover {
     background-color: var(--clr-dark-blue);
     color: var(--clr-light);
 }
 
-nav > *:hover a{
+/* nav > *:hover a{
     color: var(--clr-light);
-}
+} */
 
 
 /*
