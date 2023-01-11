@@ -97,8 +97,13 @@ header {
 
 #main-header {
     background-color: var(--clr-grey);
+    /* position: sticky;
+    top:0; */
+}
+
+#header-and-nav {
     position: sticky;
-    top:0;
+    top: 0;
 }
 
 #main {
@@ -203,8 +208,8 @@ iframe[seamless] {
 
 #main-nav{
     background-color: var(--clr-transparent);
-    position: sticky;
-    top:84px;  /* header height */
+    /* position: sticky;
+    top:84px;  header height */
 }
 
 #drop-down-container{
@@ -227,7 +232,7 @@ iframe[seamless] {
     transition: max-height 300ms ease;
     overflow: hidden;
 
-    
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .drop-down-btn{
     display: flex;
@@ -294,6 +299,10 @@ iframe[seamless] {
 
 .nav--link, .nav--link * {
     text-decoration: none;
+}
+
+#nav--account:hover img{
+    filter: invert(94%) sepia(100%) saturate(24%) hue-rotate(57deg) brightness(105%) contrast(108%);
 }
 
  
@@ -497,7 +506,6 @@ img.logo {
 }
 
 /* Experimental */
-/* from w3schools*/
 /* Dropdown Button */
 
 /* The container <div> - needed to position the dropdown content */
@@ -515,6 +523,7 @@ img.logo {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     right: 0;
+    /* transition: display 300ms ease; */
 }
 
 /* Links inside the dropdown */
@@ -532,7 +541,7 @@ img.logo {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: var(--clr-grey);
 }
 
 /* Show the dropdown menu on hover */
@@ -542,7 +551,7 @@ img.logo {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: white;
+    background-color: var(--clr-light);
 }
 
 
@@ -580,6 +589,9 @@ img.logo {
     display: block;
 }
 
+
+
+/* triangles for the background */
 .triangle-down {
     width: 0;
 	height: 0;

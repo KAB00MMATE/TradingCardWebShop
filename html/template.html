@@ -13,56 +13,94 @@
     <div id="main">
         <div class="triangle-down"></div>
         <div class="triangle-up"></div>
-        <div class="main" id="main-header">
-            <header>
-                <a href="#">
-                    <img src="../pictures/logo.jpg" width="100px" alt="logo" id="logo">
-                </a>
-                <div class="border-30px" id="search">
-                    <input type="search" name="" id="" placeholder="Search">
+        <div id="header-and-nav">
+            <div class="main" id="main-header">
+                <header>
                     <a href="#">
-                        <img class="icon" src="../icons/search-alt.svg" alt="search button">
+                        <img src="../pictures/logo.jpg" width="100px" alt="logo" id="logo">
                     </a>
-                </div>
-                <div id="header--menu">
-                    <a href="#">
-                        <img class="icon" src="../icons/shopping-cart-icon.png" alt="">
-                    </a>
-                    <a href="#">
-                        <img class="icon" id="icon--hamburger" src="../icons/hamburger_menu.svg" alt="">
-                    </a>
-                </div>
-            </header>
-        </div>
-        <div class="main" id="main-nav">
-            <nav id="nav">
-
-                           
-                <a class="nav--link" href="#">Login</a>
-                <a class="nav--link" href="#">Register</a>
-                <div id="drop-down-container">
-                    <a id="nav--account" class="nav--link" href="#">Account <img class="icon caret clickable"
-                        src="../icons/drop-down-icon.svg" alt="caret-down"></a>
-                    <div id="account--sub-menu" class="drop-down">
-                        <a class="drop-down-btn">
-                            <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
-                            <p>New Offer</p>
-                        </a>
-                        <a class="drop-down-btn">
-                            <img src="../icons/graph.svg" alt="analytics" class="icon">
-                            <p>Analytics</p>
-                        </a>
-                        <a class="drop-down-btn">
-                            <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
-                            <p>History</p>
-                        </a>
-                        <a class="drop-down-btn">
-                            <img src="../icons/cog.svg" alt="settings" class="icon">
-                            <p>Settings</p>
+                    <div class="border-30px" id="search">
+                        <input type="search" name="" id="" placeholder="Search">
+                        <a href="#">
+                            <img class="icon" src="../icons/search-alt.svg" alt="search button">
                         </a>
                     </div>
-                </div>    
-            </nav>
+                    <div id="header--menu">
+                        <div class="dropdown">
+                            <a href="#">
+                                <img class="icon" src="../icons/shopping-cart-icon.png" alt="">
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="product.html">
+                                    <img src="..//pictures/placeholderCard.jpg" alt="" style="float:left">
+                                    <h3>PlaceHolder Title, Rick Asley Card</h3>
+                                    <p>Price: 69,99$</p>
+                                    <form action="">
+                                        <label for="">Amount: 1x</label><br>
+                                        <button>➕</button>
+                                        <button>➖</button>
+                                        <button>Remove</button>
+                                    </form>
+                                </a>
+                                <a href="product.html">
+                                    <img src="..//pictures/placeholderCard.jpg" alt="" style="float:left">
+                                    <h3>PlaceHolder Title, Rick Asley Card</h3>
+                                    <p>Price: 69,99$</p>
+                                    <form action="">
+                                        <label for="">Amount: 2x</label><br>
+                                        <button>➕</button>
+                                        <button>➖</button>
+                                        <button>Remove</button>
+                                    </form>
+                                </a>
+                                <a href="product.html">
+                                    <img src="..//pictures/placeholderCard.jpg" alt="" style="float:left">
+                                    <h3>PlaceHolder Title, Rick Asley Card</h3>
+                                    <p>Price: 69,99$</p>
+                                    <form action="">
+                                        <label for="">Amount: 3x</label><br>
+                                        <button>➕</button>
+                                        <button>➖</button>
+                                        <button>Remove</button>
+                                    </form>
+                                </a>
+                                <label for="">Total: alot of $$</label>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img class="icon" id="icon--hamburger" src="../icons/hamburger_menu.svg" alt="">
+                        </a>
+                    </div>
+                </header>
+            </div>
+            <div class="main" id="main-nav">
+                <nav id="nav">
+                    <a class="nav--link" href="#">Login</a>
+                    <a class="nav--link" href="#">Register</a>
+                    <div id="drop-down-container">
+                        <a id="nav--account" class="nav--link" href="#">Account <img class="icon caret clickable"
+                            src="../icons/drop-down-icon.svg" alt="caret-down"></a>
+                        <div id="account--sub-menu" class="drop-down">
+                            <a class="drop-down-btn">
+                                <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
+                                <p>New Offer</p>
+                            </a>
+                            <a class="drop-down-btn">
+                                <img src="../icons/graph.svg" alt="analytics" class="icon">
+                                <p>Analytics</p>
+                            </a>
+                            <a class="drop-down-btn">
+                                <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
+                                <p>History</p>
+                            </a>
+                            <a class="drop-down-btn">
+                                <img src="../icons/cog.svg" alt="settings" class="icon">
+                                <p>Settings</p>
+                            </a>
+                        </div>
+                    </div>    
+                </nav>
+            </div>
         </div>
         <div class="main" id="main-body">
             <!-- https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file -->
