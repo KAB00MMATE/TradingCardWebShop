@@ -91,6 +91,7 @@ header {
 
     display: flex;
     flex-direction: row;
+    height: 84px;
 
     justify-content: space-between;
     align-items: center;
@@ -208,6 +209,7 @@ iframe[seamless] {
     /* transform: translateY(-100%); */
     overflow: hidden;
     max-height: 0px;
+    height: 60px;
     transition: max-height 300ms 0s ease-in-out;
 
     /* position: sticky;
