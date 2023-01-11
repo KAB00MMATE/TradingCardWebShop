@@ -1,0 +1,51 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&display=swap'); */
+#main-body{
+    /* display: grid; */
+    /* grid-template-columns: 1fr 5fr;    */
+    overflow: hidden;
+    height: 1vh;
+
+    display: flex;
+    flex-direction: row;
+
+    
+}
+
+#main-body *{
+    margin:0;
+}
+
+#main-body * {
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 300;
+}
+
+#filter-area {
+    background-color: var(--clr-grey);
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+
+    padding: 1em;
+    width: fit-content;
+    height: 100%;
+    
+    /* align-items: left; */
+}
+
+
+#product-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border: 5px solid ;
+    width: 400px;
+
+}
+
+.product {
+    
+}

@@ -11,14 +11,22 @@ function expandElement(toExpand, maxHeight) {
 
 function dropdownNav() {
     let nav = document.getElementById("nav");
-    let iconHamburger = document.getElementById("icon--hamburger");
+    let mainBody = document.getElementById("main-body");
+    let iconHamburger = document.getElementById("icon--menu");
 
     if (nav.style.maxHeight == "60px") {
         iconHamburger.style.transform = "rotate(0)";
+        mainBody.style.transition = "min-height 300ms 0s ease-in-out";
         collapseElement(nav);
+        mainBody.style.minHeight = "calc(100vh - 114px)";
+        mainBody.style.transition = "none";
+
     } else {
-        iconHamburger.style.transform = "rotate(90deg)";
+        iconHamburger.style.transform = "rotate(180deg)";
+        mainBody.style.transition = "min-height 300ms 0s ease-in-out";
         expandElement(nav, 60);
+        mainBody.style.minHeight = "calc(100vh - 174px)";
+        mainBody.style.transition = "none";
     }
 }
 
@@ -31,7 +39,7 @@ function toggleDiv(toToggle, maxHeight) {
     }
 }
 
-document.getElementById("icon--hamburger").addEventListener("click", dropdownNav);
+document.getElementById("icon--menu").addEventListener("click", dropdownNav);
 document.getElementById("nav--account").addEventListener("mouseenter", function () {
     expandElement(document.getElementById("account--sub-menu"), 300);
     document.getElementById("nav").style.overflow = 'visible';
