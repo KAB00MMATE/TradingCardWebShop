@@ -10,6 +10,7 @@
     <link rel="icon" href="../pictures/logo.png">
     <title>Tradingcard | Login</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <div id="main">
@@ -76,7 +77,24 @@
         </div>
 
         <div class="main" id="main-body">
-            
+            <div id="login-block">
+                <h1>Login</h1>
+                <form action="index.html" autocomplete="on">
+                    <fieldset>
+                        <legend>E-mail</legend>
+                        <input type="email" name="email_user" id="email_user" autofocus placeholder="bob@gmail.com">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Password</legend>
+                        <input type="password" name="password_user" id="password_user" placeholder="Welcome1">
+                    </fieldset>
+                    <br>
+                    <div id="login-btn-block">
+                        <p id="no-account">No account yet? Click <a href="newUser.html">here</a></p>
+                        <input class = "submit-btn" type="submit" onclick="alert('Your info:\nE-mail: '+ email_user.value+'\nPassword: ' + password_user.value)" value="Login">
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="main" id="main-footer">

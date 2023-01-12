@@ -431,6 +431,11 @@ img.logo {
     box-shadow: 2px 2px 2px orange;
 }
 
+.submit-btn {
+    font-size: large;
+    padding: 1em 2em;
+}
+
 /* account related page*/
 
 #accountSpacer {
