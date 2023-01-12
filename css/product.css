@@ -7,6 +7,10 @@
     column-gap: 1em;
 }
 
+#header-and-nav {
+    z-index: 100;
+}
+
 #main-body * {
     font-family: 'Inter', sans-serif;
 }
@@ -125,6 +129,8 @@
     top: -3em;
     left: calc(100% - 203px);
 
+    z-index: 0;
+
     font-weight: 200;
     font-size: large;
 
@@ -216,4 +222,34 @@
 
     gap: 1em;
 
+}
+
+
+
+.product--supplier {
+    display: flex;
+    flex-direction: row;  
+    height: 50px;
+    align-items: top;
+    gap: 0.5em;
+
+}
+
+.product--supplier-info{
+    line-height: 1px;
+    height: 10px;
+
+    
+}
+
+.product--supplier-pf {
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    
+}
+
+.product--supplier-name{
+    font-weight: 700;
+    font-size: larger;
 }
