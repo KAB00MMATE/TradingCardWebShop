@@ -1,151 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="TradingCard, trading, CSE, Meme, shopping, shop">
     <meta name="description" content="A shopping site for meme trading cards">
     <meta name="author" content="Matthijs Bonke, Sander Bakker">
     <link rel="icon" href="../pictures/logo.png">
-    <title>TradingCard | Product</title>
+    <title>TradingCard</title>
     <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../javaScript/test.js"></script>
 </head>
+
 <body>
-    <div id="Main">
-        <div id="TopHead">
-            <header>
-                <a href="./index.html">
-                    <img src="../pictures/logo.png" alt="" height = "100px" class = "logo">
-                </a>
-                <h1>TradingCard.com</h1>
-            </header>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="newUser.html">New Account</a>
-                <div class="dropdown">
-                    <a href="shoppingCart.html">Shopping Cart</a>
-                    <div class="dropdown-content">
-                        <a href="product.html">
-                            <img src="..//pictures/placeholderCard.jpg" alt="" style="float:left">
-                            <h3>PlaceHolder Title, Rick Asley Card</h3>
-                            <p>Price: 69,99$</p>
-                            <form action="">
-                                <label for="">Amount: 1x</label><br>
-                                <button>➕</button>
-                                <button>➖</button>
-                                <button>Remove</button>
-                            </form>
-                        </a>
-                        <a href="product.html">
-                            <img src="..//pictures/placeholderCard.jpg" alt="" style="float:left">
-                            <h3>PlaceHolder Title, Rick Asley Card</h3>
-                            <p>Price: 69,99$</p>
-                            <form action="">
-                                <label for="">Amount: 2x</label><br>
-                                <button>➕</button>
-                                <button>➖</button>
-                                <button>Remove</button>
-                            </form>
-                        </a>
-                        <a href="product.html">
-                            <img src="..//pictures/placeholderCard.jpg" alt="" style="float:left">
-                            <h3>PlaceHolder Title, Rick Asley Card</h3>
-                            <p>Price: 69,99$</p>
-                            <form action="">
-                                <label for="">Amount: 3x</label><br>
-                                <button>➕</button>
-                                <button>➖</button>
-                                <button>Remove</button>
-                            </form>
-                        </a>
-                        <label for="">Total: alot of $$</label>
+    <div id="main">
+        <div class="triangle-down"></div>
+        <div class="triangle-up"></div>
+        <div id="header-and-nav">
+            <div class="main" id="main-header">
+                <header>
+
+                    <!-- <header-component></header-component> -->
+                    <a href="index.html">
+                        <img src="../pictures/logo.png" width="100px" alt="logo" id="logo">
+                    </a>
+                    <div class="border-30px" id="search">
+                        <form action="">
+                            <input type="search" name="" id="" placeholder="Search">
+                            <button type="submit">
+                                <img class="icon" src="../icons/search-alt.svg" alt="search button">
+                            </button>
+                        </form>
                     </div>
-                </div>
-                <a href="login.html">Login</a>
-                <a href="account.html">Account</a>
-            </nav>
-        </div>
+                    <div id="header--menu">
+                        <div class="dropdown">
+                            <a href="shoppingCart.html">
+                                <img class="icon" src="../icons/shopping-cart-icon.png" alt="shopping cart">
+                            </a>
+                            <div class="dropdown-content">
 
-        <div id="MainBlock">
-            <div id="productSpacer">
-
+                                <div class="cart--dropdown-total">
+                                    <label for="">Total: not alot of $$</label>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="icon clickable" id="icon--menu" src="../icons/menu_icon.svg" alt="">
+                    </div>
+                </header>
             </div>
-            <div id="productBlock">
-                <div id="headProductBlock">
-                    <h1>PlaceHolder Title, Rick Asley Card</h1>
-                    <img src="../pictures/placeholderCard.jpg" alt="" height="500px">
-                    <h2>Subtitle for this card, or tags</h2>
-                    <h2>Price: 69,99$</h2>
-                    <p>Description for this card</p>
-                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
-                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
-                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
-                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
-                    <p>Description for this card</p>
-                    <p>Expedita cum tenetur doloribus dolores quos laborum amet. Vero, dicta.</p>
-                    <p>Voluptates reiciendis laborum, harum sapiente magnam inventore numquam nulla repellat.</p>
-                    <p>Et magnam non sed nam. Asperiores nihil laborum ut officia!</p>
-                    <p>Enim nesciunt cupiditate qui! Autem obcaecati porro non quo laborum.</p>
-                    <form action="">
-                        <input type="number" name="amount" id="amount" min="1" value="1">
-                        <input type="submit" onclick="alert('Added to Cart')" value="ADD to Cart">
-                    </form>
-                </div>
-
-
-                
-                
-                <div id="ReviewProductBlock">
-                    <h2>Reviews</h2>
-                    <div id="review">
-                        <h3>Good card!</h3>
-                        <div>⭐⭐⭐⭐</div>
-                        <p>This is a nice card, very handsome man</p>
-                        <form action="">
-                            <label for="">Was this review helpfull?</label>
-                            <button>Yes</button>
-                            <button>No</button>
-                        </form>
+            <div class="main" id="main-nav">
+                <nav id="nav">
+                    <a class="nav--link" href="login.html">Login</a>
+                    <a class="nav--link" href="register.html">Register</a>
+                    <div id="drop-down-container">
+                        <a id="nav--account" class="nav--link" href="account.html">Account <img
+                                class="icon caret clickable" src="../icons/drop-down-icon.svg" alt="caret-down"></a>
+                        <div id="account--sub-menu" class="drop-down">
+                            <a class="drop-down-btn" href="newOffer.html">
+                                <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
+                                <p>New Offer</p>
+                            </a>
+                            <a class="drop-down-btn" href="analytics.html">
+                                <img src="../icons/graph.svg" alt="analytics" class="icon">
+                                <p>Analytics</p>
+                            </a>
+                            <a class="drop-down-btn" href="history.html">
+                                <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
+                                <p>History</p>
+                            </a>
+                            <a class="drop-down-btn" href="settings.html">
+                                <img src="../icons/cog.svg" alt="settings" class="icon">
+                                <p>Settings</p>
+                            </a>
+                        </div>
                     </div>
-                    <div id="review">
-                        <h3>Great Meme! Much wow</h3>
-                        <div>⭐⭐⭐⭐⭐</div>
-                        <p>The best of the best memes. Such fun, much WOW!!</p>
-                        <form action="">
-                            <label for="">Was this review helpfull?</label>
-                            <button>Yes</button>
-                            <button>No</button>
-                        </form>
-                    </div>
-                    <div id="review">
-                        <h3>Got Rick rolled too many times...</h3>
-                        <div>⭐⭐</div>
-                        <p>The card itself is nice and well made. But my friends keep Rick Rolling me with it. Pls make it stop!</p>
-                        <form action="">
-                            <label for="">Was this review helpfull?</label>
-                            <button>Yes</button>
-                            <button>No</button>
-                        </form>
-                    </div>
-                </div>
-                
-                    
-                    
-                
-            </div>
-            <div id="accountSpacer" style="float: right;">
-
+                </nav>
             </div>
         </div>
-        
-        <footer>
-            <p>Authors: Sander Bakker and Matthijs Bonke</p>
-            <p>Students from the Technical University of Delft</p>
-            <p style="float: right;">Contact us <a href="mailto:m.s.bonke@student.tudelft.nl">Here</a></p>
-            
-        </footer>
+
+        <div class="main" id="main-body">
+            <!-- <script>document.write("<p> hoi nee! </p>")</script>
+            https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file
+            <div style="width: 100%; height: 100%;">
+                <iframe id="i-frame" src="../html/test.html"seamless></iframe>
+            </div> -->
+
+        </div>
+
+        <div class="main" id="main-footer">
+            <footer>
+                <p>Authors: Sander Bakker and Matthijs Bonke</p>
+                <p>Students from the Technical University of Delft</p>
+                <p style="float: right;">Contact us <a href="mailto:m.s.bonke@student.tudelft.nl, s.a.bakker-4@student.tudelft.nl?subject=The Best Website">here</a></p>
+            </footer>
+        </div>
     </div>
-    <script src="../javaScript/myScript.js"></script>
+    <script src="../javaScript/utility.js"></script>
 </body>
+
 </html>
