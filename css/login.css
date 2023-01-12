@@ -30,42 +30,37 @@
     padding-inline: 1em;
 }
 
-fieldset {
+#login-block fieldset {
     margin:2em 0;
     border: 2px solid black;
 }
 
 
 
-fieldset input {
+#login-block fieldset input {
     width:100%;
     font-size: larger;
 }
 
-/* fieldset:hover {
-    background-color: var(--clr-grey);
-    box-shadow: 0 0 0 0.5em var(--clr-grey);
-} */
-
-legend {
+#login-block legend {
     font-size: larger;
     font-weight: 800;
 }
 
-input {
+#login-block input {
     font-size: large;
     padding: 1em 2em;
 }
 
-input:hover {
+#login-block input:hover {
     background-color: var(--clr-grey);
 }
 
-input:active {
+#login-block input:active {
     background-color: var(--clr-main-dark);
 }
 
-input:focus{
+#login-block input:focus{
     background-color: var(--clr-grey);
 }
 
@@ -79,10 +74,6 @@ input:focus{
     width: 100%;
     justify-content:space-between;
     align-items: flex-end;
-}
-
-.submit-btn {
-    justify-self: end;
 }
 
 #login-btn-block a {
