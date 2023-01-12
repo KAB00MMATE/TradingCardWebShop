@@ -448,6 +448,12 @@ img.logo {
 .submit-btn {
     font-size: large;
     padding: 1em 2em;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: var(--clr-grey);
+    cursor: pointer;
 }
 
 /* account related page*/
