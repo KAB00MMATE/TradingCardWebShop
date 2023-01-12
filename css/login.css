@@ -33,6 +33,7 @@
 #login-block fieldset {
     margin:2em 0;
     border: 2px solid black;
+    border-radius: 5px;
 }
 
 
@@ -52,8 +53,11 @@
     padding: 1em 2em;
 }
 
-#login-block input:hover {
+#login-block fieldset input:hover {
     background-color: var(--clr-grey);
+    border-radius: 2px;
+    border-style:solid;
+    border-color: black;
 }
 
 #login-block input:active {
