@@ -1,0 +1,35 @@
+Learning Activities and Goals
+
+This assignment intends to use your front-end development skills. You will develop a web-based system or website using HTML and CSS (only basic CSS, and you don't need to use Javascript or JQuery at the moment). To do well, I urge you to review the class content.
+
+Note: For this assignment, you must implement the first FOUR requirements (2 for each group member). We will evaluate you against these requirements. You can implement other requirements (in italics) if you want, but we will not assess you against these requirements. For the final assignment, you must implement the remaining requirements as well. We will ask you which ones to implement later. 
+
+Also, all the signup pages must include the following fields and other fields specific to the projects (you have to think project specific fields yourself based on requirements). The standard fields you must include are user ID, password, name, address, country, ZIP code, email, sex, language, and about/bio.  
+
+
+
+
+Project 4: E-commerce website
+
+For this project, you will implement any e-commerce platform that enables people to buy or sell items online. 
+
+    Users (both suppliers and customers) should be able to register and sign in securely.
+
+    Sellers can place items in a system by entering item details (name, description, quantity, price per item, etc.) under specific categories (books, films, etc). 
+
+    Customers must have an adequate search mechanism for easy and quick access to particular products (e.g., filtering based on suppliers, price range, and reviews/star ratings).
+
+    There will be a shopping cart so that customers can add a specific number of items and check out. For this assignment, you dont need to implement the checkout process.
+
+    Customers should be able to view their past orders.
+
+    Once the order has been placed, you can send a dummy date and time to customers and send a notification one hour before the delivery of the item (on a browser)
+
+    Customers and suppliers should be able to update their details, such as addresses. 
+
+    You need to show strategic data and graphs for administrators and suppliers about the popular items in each category and age group (keep this simple!).
+
+    There will be a feedback mechanism (descriptive reviews and star ratings) so that customers can give feedback on the product or service they have purchased. 
+
+
+
