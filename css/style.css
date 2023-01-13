@@ -17,6 +17,9 @@
 
     --clr-transparent: #DFDFDF40;
 
+    scrollbar-width: 10px;
+    scrollbar-track-color: var(--clr-main-dark);
+    scrollbar-color: #888 #555;
 
     --max-width: 1920px;
 }
