@@ -46,6 +46,19 @@
 }
 
 
+@media (max-width: 600px) {
+    #main-body {
+        flex-direction: column;
+    }
+
+    #filter-area {
+        flex-direction: row;
+        width: auto;
+    }
+    
+}
+
+
 fieldset {
     border-radius: 5px;
 }
