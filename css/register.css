@@ -18,6 +18,10 @@
     box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, 0.8);
 }
 
+#register-block h1 {
+    margin-inline: 2em;
+}
+
 #register-block fieldset {
     margin: 1em 0;
     border: 2px solid black;
@@ -47,15 +51,13 @@
 
 .grid50-50 {
     display: grid;
-    grid-template-columns: auto auto;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
     gap:0.5em;
 }
 
 .grid3-way {
     display: grid;
     grid-template-columns: auto auto auto;
-    flex-wrap: wrap;
     gap:0.5em;
 }
 
