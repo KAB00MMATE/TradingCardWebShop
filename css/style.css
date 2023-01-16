@@ -76,6 +76,7 @@ body {
 
 #main-body {
     min-height: calc(100vh - 114px);
+    padding:1em;
 }
 
 a {
