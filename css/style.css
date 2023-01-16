@@ -577,7 +577,7 @@ img.logo {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    /* display: none; */
+    display: none;
     position: absolute;
     overflow: hidden;
     padding: 1em;
