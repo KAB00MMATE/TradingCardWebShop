@@ -114,6 +114,18 @@
                         </div>
                     </fieldset>
 
+                    <fieldset class="grid50-50">
+                        <legend>Account Type</legend>
+                        <div>
+                            <input type="radio" name="account_type" checked id="personal">
+                            <label for="personal">Personal</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="account_type" id="business">
+                            <label for="business">Business</label>
+                        </div>
+                    </fieldset>
+
                     <fieldset class="grid50-50 input-adjusted">
                         <legend>Address</legend>
                         <div>
@@ -176,7 +188,7 @@
                         <textarea name="bio" id="bio" cols="50" rows="7" placeholder="Write about yourself..."></textarea>
                     </fieldset>
 
-                    <div>
+                    <div id="btn-block">
                         <button class="submit-btn" type="reset">Reset</button>
                         <button class="submit-btn" type="submit">Create Account</button>
                     </div>
