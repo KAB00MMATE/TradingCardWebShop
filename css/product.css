@@ -1,10 +1,8 @@
 #main-body {
-    display: flex;
-    flex-direction: row;
-    padding-inline: 100px;
+        padding-inline: 100px;
     padding-top: 100px;
 
-    column-gap: 1em;
+    /* column-gap: 1em; */
 }
 
 #header-and-nav {
@@ -13,6 +11,11 @@
 
 #main-body * {
     font-family: 'Inter', sans-serif;
+}
+
+#main-container {
+    display: flex;
+    
 }
 
 .product--price {
@@ -37,6 +40,7 @@
 
 #product--image {
     object-fit: contain;
+    flex-shrink: 1;
     /* width: 500px; */
 }
 
@@ -120,6 +124,8 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+
+    max-width: 20em;
 }
 
 #review--sort-on{
@@ -127,6 +133,8 @@
     height: fit-content;
     position: relative;
     top: -3em;
+
+
     left: calc(100% - 203px);
 
     z-index: 0;
