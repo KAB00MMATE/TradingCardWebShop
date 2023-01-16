@@ -58,3 +58,8 @@
     flex-wrap: wrap;
     gap:0.5em;
 }
+
+#btn-block{
+    display:flex;
+    justify-content: space-between;
+}
