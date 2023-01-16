@@ -1,0 +1,60 @@
+#main-body {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+#register-block {
+    background-color: var(--clr-light);
+    width: 100%;
+    /* min-width: max-content; */
+    max-width: min(calc(var(--max-width)/2), 100vw);
+    box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1em;
+}
+
+#register-block:hover {
+    box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+}
+
+#register-block fieldset {
+    margin: 1em 0;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#register-block input {
+    font-size: large;
+    padding: 1em 2em;
+}
+
+#register-block textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 2em;
+}
+
+.input-adjusted input{
+    width: 100%;
+    /* margin: 1em; */
+}
+
+#register-block legend {
+    font-size: larger;
+    font-weight: 800;
+}
+
+.grid50-50 {
+    display: grid;
+    grid-template-columns: auto auto;
+    flex-wrap: wrap;
+    gap:0.5em;
+}
+
+.grid3-way {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+    gap:0.5em;
+}
