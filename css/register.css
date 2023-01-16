@@ -51,15 +51,13 @@
 
 .grid50-50 {
     display: grid;
-    grid-template-columns: auto auto;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
     gap:0.5em;
 }
 
 .grid3-way {
     display: grid;
     grid-template-columns: auto auto auto;
-    flex-wrap: wrap;
     gap:0.5em;
 }
 
