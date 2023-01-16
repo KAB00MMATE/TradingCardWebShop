@@ -83,40 +83,151 @@
         </div>
 
         <div class="main" id="main-body">
-            <div id="product-container">
-                <div class="product">
-                    <a href="../html/product.html">
-                        <img src="../pictures/placeholderCard.jpg" alt="" class="product--image">
-                    </a>
-                    <div class="product--info">
-                        <div class="flex-column">
-                            <a href="../html/product.html">
-                                <h3 class="product--title">
-                                    Product title
-                                </h3>
-                            </a>
-                            <div class="deleteable-counter">
-                                <img src="../icons/trash-can.svg" alt="" class="icon icon--trash-can clickable">
-                                <input type="number" name="amount-selector" id="amount-selector" value="1"
-                                    class="amount-selector">
-                            </div>
+            <div id="main-content">
+                <div id="product-container">
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img src="../pictures/placeholderCard.jpg" alt="" class="product--image">
+                        </a>
+                        <div class="product--info">
+                                <a href="../html/product.html">
+                                    <h3 class="product--title">
+                                        Product title
+                                    </h3>
+                                </a>
+
+                                <div class="wrap-content">
+                                    <p class="product--price-container">
+                                        € <span class="product-price">30</span>
+                                    </p>
+                                </div>
+                                
+                                <button class="btn btn-in-stock">
+                                    in stock
+                                </button>
+
+                                <div class="wrap-content">
+                                    <div class="deleteable-counter">
+                                        <img src="../icons/trash-can.svg" alt="" class="icon icon--trash-can clickable">
+                                        <input type="number" name="amount-selector" id="amount-selector" value="1"
+                                            class="amount-selector">
+                                    </div>
+
+                                </div>
                         </div>
-                        <p class="product--price-container">
-                            € <span class="product-price">30</span>
-                        </p>
+                    </div>
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img src="../pictures/placeholderCard.jpg" alt="" class="product--image">
+                        </a>
+                        <div class="product--info">
+                                <a href="../html/product.html">
+                                    <h3 class="product--title">
+                                        Product title
+                                    </h3>
+                                </a>
+
+                                <div class="wrap-content">
+                                    <p class="product--price-container">
+                                        € <span class="product-price">30</span>
+                                    </p>
+                                </div>
+                                
+                                <button class="btn btn-in-stock">
+                                    in stock
+                                </button>
+
+                                <div class="wrap-content">
+                                    <div class="deleteable-counter">
+                                        <img src="../icons/trash-can.svg" alt="" class="icon icon--trash-can clickable">
+                                        <input type="number" name="amount-selector" id="amount-selector" value="1"
+                                            class="amount-selector">
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img src="../pictures/placeholderCard.jpg" alt="" class="product--image">
+                        </a>
+                        <div class="product--info">
+                                <a href="../html/product.html">
+                                    <h3 class="product--title">
+                                        Product title
+                                    </h3>
+                                </a>
+
+                                <div class="wrap-content">
+                                    <p class="product--price-container">
+                                        € <span class="product-price">30</span>
+                                    </p>
+                                </div>
+                                
+                                <button class="btn btn-in-stock">
+                                    in stock
+                                </button>
+
+                                <div class="wrap-content">
+                                    <div class="deleteable-counter">
+                                        <img src="../icons/trash-can.svg" alt="" class="icon icon--trash-can clickable">
+                                        <input type="number" name="amount-selector" id="amount-selector" value="1"
+                                            class="amount-selector">
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img src="../pictures/placeholderCard.jpg" alt="" class="product--image">
+                        </a>
+                        <div class="product--info">
+                                <a href="../html/product.html">
+                                    <h3 class="product--title">
+                                        Product title
+                                    </h3>
+                                </a>
+
+                                <div class="wrap-content">
+                                    <p class="product--price-container">
+                                        € <span class="product-price">30</span>
+                                    </p>
+                                </div>
+                                
+                                <button class="btn btn-in-stock">
+                                    in stock
+                                </button>
+
+                                <div class="wrap-content">
+                                    <div class="deleteable-counter">
+                                        <img src="../icons/trash-can.svg" alt="" class="icon icon--trash-can clickable">
+                                        <input type="number" name="amount-selector" id="amount-selector" value="1"
+                                            class="amount-selector">
+                                    </div>
+
+                                </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div id="checkout-container">
-                <h1>Your order</h1>
-                <div id="checkout--total-item-row" class="flex">
-                    <p>Cards <span>(4)</span></p>
-                    <p>€<span>50</span></p>
-                </div>
-                <div id="checktout-shipping-row" class="flex">
-                    <p>Shipping costs</p>
-                    <p>€<span>50</span></p>
+                <div id="checkout-container">
+                    <h1>Your order</h1>
+                    <div id="checkout--total-item-row" class="checkout--row">
+                        <p>Cards <span>(4)</span></p>
+                        <p>€<span>10</span></p>
+                    </div>
+                    <div id="checkout--shipping-row" class="checkout--row">
+                        <p>Shipping costs</p>
+                        <p>€<span>2.50</span></p>
+                    </div>
+                    <div id="checkout--total-row" class="checkout--row">
+                        <p>Total</p>
+                        <p>€<span>12.50</span></p>
+                    </div>
+                    <button id="checkout--btn" class="submit-btn">
+                        Checkout
+                        <img id="icon--checkout-arrow" src="../icons/arrow-right.svg" alt="" class="icon">
+                    </button>
                 </div>
             </div>
 
