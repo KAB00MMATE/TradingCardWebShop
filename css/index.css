@@ -1,47 +1,43 @@
-
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&display=swap'); */
-#main-body{
-    /* display: grid; */
-    /* grid-template-columns: 1fr 5fr;    */
-    /* overflow: scroll; */
-    /* height: 1vh; */
-
-    display: flex;
-    flex-direction: row;   
-
+#main-body {
     scrollbar-width: none;
 }
 
-#main-body:-webkit-scrollbar{
+#main-body:-webkit-scrollbar {
     display: none;
 }
 
-
-
-#main-body *{
-    margin:0;
-}
-
 #main-body * {
+    margin: 0;
     font-family: 'Inter', 'sans-serif';
     font-weight: 300;
 }
 
-#filter-area {
+#main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+}
+
+#filter-area>form {
     background-color: var(--clr-grey);
 
     display: flex;
     flex-direction: column;
 
-    
+
 
     /* margin: 10px; */
 
     padding: 1em;
     width: fit-content;
-    
-    
-    /* align-items: left; */
+
+
+    /* align-items: center; */
     /* margin-top: .5em; */
 }
 
@@ -51,11 +47,12 @@
         flex-direction: column;
     }
 
-    #filter-area {
+    #filter-area>form {
         flex-direction: row;
         width: auto;
+        flex-wrap: wrap;
     }
-    
+
 }
 
 
@@ -63,16 +60,25 @@ fieldset {
     border-radius: 5px;
 }
 
-#product-section {
-    display: flex;
-    /* grid-template-columns: repeat(3, 1fr); */
-    flex-wrap: wrap;
-    gap: 3em;
 
-    /* overflow: scroll; */
-    max-width: 100%;
+.flex-align-center {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#product-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 332px);
+    justify-content: space-between;
+
+
+    gap: 1em;
+
+    flex-grow: 1;
 
     margin: 1em;
+    max-width: none;
 }
 
 .product {
@@ -85,10 +91,11 @@ fieldset {
 
     padding: 1em;
 
-    max-height: min-content;
+    height: fit-content;
     width: min-content;
 
     gap: 1em;
+    /* margin: auto; */
 }
 
 .product--image {
@@ -99,7 +106,7 @@ fieldset {
 
 .product--supplier {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     height: fit-content;
     align-content: center;
 
@@ -113,20 +120,24 @@ fieldset {
 
     vertical-align: middle;
     border: 2px solid black;
-    
+
 }
 
-.product--supplier-name{
+.product--supplier-name {
     font-weight: 700;
     font-size: larger;
 }
 
 
 
-.product--price{
-   display: inline-block;
+.product--price {
+    display: inline-block;
 }
 
 .icon--add-to-cart {
     float: right;
+}
+
+.icon--star {
+    width: 20px;
 }

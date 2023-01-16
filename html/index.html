@@ -83,167 +83,227 @@
         </div>
 
         <div class="main" id="main-body">
-            <div id="filter-area">
-                <fieldset>
-                    <legend>Suppliers</legend>
-                    <input type="checkbox" name="supplier1" id="OOP" value="OOP">
-                    <label for="OOP">OOP</label><br>
-                    <input type="checkbox" name="supplier2" id="CO" value="CO">
-                    <label for="CO">CO</label><br>
-                    <input type="checkbox" name="supplier3" id="R&L" value="R&L">
-                    <label for="R&L">R&L</label><br>
-                    <input type="checkbox" name="supplier4" id="All" value="R&L">
-                    <label for="R&L">All</label><br>
-                </fieldset>
+            <div id="main-container">
+                
+                <div id="filter-area">
+                    <form action="" oninput="x.value = priceRange.value">
+                        <fieldset>
+                            <legend>Suppliers</legend>
+                            <input type="checkbox" name="supplier1" id="OOP" value="OOP">
+                            <label for="OOP">OOP</label><br>
+                            <input type="checkbox" name="supplier2" id="CO" value="CO">
+                            <label for="CO">CO</label><br>
+                            <input type="checkbox" name="supplier3" id="R&L" value="R&L">
+                            <label for="R&L">R&L</label><br>
+                            <input type="checkbox" name="supplier4" id="Other" value="Other">
+                            <label for="Other">Other</label><br>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Category</legend>
+                            <input type="checkbox" name="category1" id="Meme" value="Meme">
+                            <label for="Meme">Meme</label><br>
+                            <input type="checkbox" name="category2" id="RickRoll" value="RickRoll">
+                            <label for="RickRoll">RickRoll</label><br>
+                            <input type="checkbox" name="category3" id="Rare" value="Rare">
+                            <label for="Rare">Rare</label><br>
+                            <input type="checkbox" name="category4" id="Legendary" value="Legendary">
+                            <label for="Legendary">Legendary</label><br>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Price</legend>
+                            <label for="priceRange">Price filter:</label>
+                            <output name="x" for="priceRange">69</output>$<br>
+                            <input type="range" name="priceRange" id="priceRange" value="69">100<br>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Minimum rating</legend>
 
-                <fieldset>
-                    <legend>Category</legend>
-                    <input type="checkbox" name="category1" id="Meme" value="Meme">
-                    <label for="Meme">Meme</label><br>
-                    <input type="checkbox" name="category2" id="RickRoll" value="RickRoll">
-                    <label for="RickRoll">RickRoll</label><br>
-                    <input type="checkbox" name="category3" id="Rare" value="Rare">
-                    <label for="Rare">Rare</label><br>
-                    <input type="checkbox" name="category4" id="Legendary" value="Legendary">
-                    <label for="Legendary">Legendary</label><br>
-                </fieldset>
 
-                <fieldset>
-                    <legend>Price</legend>
-                    <label for="priceRange">Price filter:</label>
-                    <output name="x" for="priceRange">69</output>$<br>
-                    <input type="range" name="priceRange" id="priceRange" value="69">100<br>
-                </fieldset>
-                <!-- <h2>Supplier</h2>
+                            <div class="flex-align-center">
+                                <input type="radio" name="min_rating" id="rating_0+">
+                                <label for="rating_0+">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <!-- 0 stars -->
+                                </label>
+                            </div>
 
-                <label for="OOP">OOP</label>
-                <input type="checkbox" name="OOP" id="OOP">
-                <input type="checkbox" name="R&L" id="OOP">
-                <input type="checkbox" name="OOP" id="OOP">
-                <h2>Category</h2>
-                <h2>Price</h2> -->
-            </div>
 
-            <div id="product-section">
+                            <div class="flex-align-center">
+                                <input type="radio" name="min_rating" id="rating_1+">
+                                <label for="rating_1+">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <!-- 1 star or more -->
+                                </label>
+                            </div>
 
-                <div class="product">
-                    <a href="../html/product.html">
 
-                        <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
-                    </a>
-                    
-                    <div class="product--supplier">
-                        <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
-                        <div class="product--supplier-info">
-                            <h3 class="product--supplier-name">OOP</h3>
-                            <p class="product--supplier-offers">10 offers</p>
-                        </div>
-                    </div>
-                    
-                    <a href="../html/product.html">
-                        <h2 class="product--name">Rick Astley Card</h2>
-                    </a>
+                            <div class="flex-align-center">
+                                <input type="radio" name="min_rating" id="rating_2+">
+                                <label for="rating_2+">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <!-- 2 stars or more -->
+                                </label>
+                            </div>
 
-                    <p class="product--description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
-                        facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
-                    </p>
-                    <div class="product--last-row">
-                        <h3>Price
-                            <span class="product--price">€5</span>
-                        </h3>
-                        <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
-                    </div>
+                            <div class="flex-align-center">
+                                <input type="radio" name="min_rating" id="rating_3+">
+                                <label for="rating_3+">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <!-- 3 stars or more -->
+                                </label>
+                            </div>
+                            <div class="flex-align-center">
+                                <input type="radio" name="min_rating" id="rating_4+">
+                                <label for="rating_4+">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-empty.svg" class="icon icon--star" alt="">
+                                    <!-- 4 stars or more -->
+                                </label>
+                            </div>
+                            <div class="flex-align-center">
+                                <input type="radio" name="min_rating" id="rating_5">
+                                <label for="rating_5">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <img src="../icons/star-filled.svg" class="icon icon--star" alt="">
+                                    <!-- 5 stars -->
+                                </label>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- <h2>Supplier</h2>
+                    <label for="OOP">OOP</label>
+                    <input type="checkbox" name="OOP" id="OOP">
+                    <input type="checkbox" name="R&L" id="OOP">
+                    <input type="checkbox" name="OOP" id="OOP">
+                    <h2>Category</h2>
+                    <h2>Price</h2> -->
                 </div>
-                <div class="product">
-                    <a href="../html/product.html">
-
-                        <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
-                    </a>
-                    
-                    <div class="product--supplier">
-                        <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
-                        <div class="product--supplier-info">
-                            <h3 class="product--supplier-name">OOP</h3>
-                            <p class="product--supplier-offers">10 offers</p>
+                <div id="product-section">
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
+                        </a>
+                        <div class="product--supplier">
+                            <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
+                            <div class="product--supplier-info">
+                                <h3 class="product--supplier-name">OOP</h3>
+                                <p class="product--supplier-offers">10 offers</p>
+                            </div>
+                        </div>
+                        <a href="../html/product.html">
+                            <h2 class="product--name">Rick Astley Card</h2>
+                        </a>
+                        <p class="product--description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
+                            facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
+                        </p>
+                        <div class="product--last-row">
+                            <h3>Price
+                                <span class="product--price">€5</span>
+                            </h3>
+                            <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
                         </div>
                     </div>
-                    
-                    <a href="../html/product.html">
-                        <h2 class="product--name">Rick Astley Card</h2>
-                    </a>
-
-                    <p class="product--description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
-                        facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
-                    </p>
-                    <div class="product--last-row">
-                        <h3>Price
-                            <span class="product--price">€5</span>
-                        </h3>
-                        <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
-                    </div>
-                </div>
-                <div class="product">
-                    <a href="../html/product.html">
-
-                        <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
-                    </a>
-                    
-                    <div class="product--supplier">
-                        <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
-                        <div class="product--supplier-info">
-                            <h3 class="product--supplier-name">OOP</h3>
-                            <p class="product--supplier-offers">10 offers</p>
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
+                        </a>
+                        <div class="product--supplier">
+                            <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
+                            <div class="product--supplier-info">
+                                <h3 class="product--supplier-name">OOP</h3>
+                                <p class="product--supplier-offers">10 offers</p>
+                            </div>
+                        </div>
+                        <a href="../html/product.html">
+                            <h2 class="product--name">Rick Astley Card</h2>
+                        </a>
+                        <p class="product--description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
+                            facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
+                        </p>
+                        <div class="product--last-row">
+                            <h3>Price
+                                <span class="product--price">€5</span>
+                            </h3>
+                            <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
                         </div>
                     </div>
-                    
-                    <a href="../html/product.html">
-                        <h2 class="product--name">Rick Astley Card</h2>
-                    </a>
-
-                    <p class="product--description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
-                        facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
-                    </p>
-                    <div class="product--last-row">
-                        <h3>Price
-                            <span class="product--price">€5</span>
-                        </h3>
-                        <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
-                    </div>
-                </div>
-                <div class="product">
-                    <a href="../html/product.html">
-
-                        <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
-                    </a>
-                    
-                    <div class="product--supplier">
-                        <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
-                        <div class="product--supplier-info">
-                            <h3 class="product--supplier-name">OOP</h3>
-                            <p class="product--supplier-offers">10 offers</p>
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
+                        </a>
+                        <div class="product--supplier">
+                            <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
+                            <div class="product--supplier-info">
+                                <h3 class="product--supplier-name">OOP</h3>
+                                <p class="product--supplier-offers">10 offers</p>
+                            </div>
+                        </div>
+                        <a href="../html/product.html">
+                            <h2 class="product--name">Rick Astley Card</h2>
+                        </a>
+                        <p class="product--description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
+                            facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
+                        </p>
+                        <div class="product--last-row">
+                            <h3>Price
+                                <span class="product--price">€5</span>
+                            </h3>
+                            <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
                         </div>
                     </div>
-                    
-                    <a href="../html/product.html">
-                        <h2 class="product--name">Rick Astley Card</h2>
-                    </a>
-
-                    <p class="product--description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
-                        facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
-                    </p>
-                    <div class="product--last-row">
-                        <h3>Price
-                            <span class="product--price">€5</span>
-                        </h3>
-                        <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
+                    <div class="product">
+                        <a href="../html/product.html">
+                            <img class="product--image" src="../pictures/placeholderCard.jpg" alt="">
+                        </a>
+                        <div class="product--supplier">
+                            <img src="../pictures/chad-pf.png" alt="" class="product--supplier-pf">
+                            <div class="product--supplier-info">
+                                <h3 class="product--supplier-name">OOP</h3>
+                                <p class="product--supplier-offers">10 offers</p>
+                            </div>
+                        </div>
+                        <a href="../html/product.html">
+                            <h2 class="product--name">Rick Astley Card</h2>
+                        </a>
+                        <p class="product--description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Earum voluptas, neque officiis est veniam tenetur ipsam accusantium
+                            facere quas ea? Mollitia perspiciatis quaerat laborum enim in, iure temporibus dolore ipsum!
+                        </p>
+                        <div class="product--last-row">
+                            <h3>Price
+                                <span class="product--price">€5</span>
+                            </h3>
+                            <img src="../icons/add-to-cart-icon.png" alt="" class="icon--add-to-cart">
+                        </div>
                     </div>
                 </div>
             </div>
