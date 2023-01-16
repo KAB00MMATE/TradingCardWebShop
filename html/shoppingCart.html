@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="TradingCard, trading, CSE, Meme, shopping, shop">
+    <meta name="description" content="A shopping site for meme trading cards">
+    <meta name="author" content="Matthijs Bonke, Sander Bakker">
+    <link rel="icon" href="../pictures/logo.png">
+    <title>TradingCard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shopping_cart.css">
+
+    <script src="../javaScript/test.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div class="triangle-down"></div>
+        <div class="triangle-up"></div>
+        <div id="header-and-nav">
+            <div class="main" id="main-header">
+                <header>
+
+                    <!-- <header-component></header-component> -->
+                    <a href="index.html">
+                        <img src="../pictures/logo.png" width="100px" alt="logo" id="logo">
+                    </a>
+                    <div class="border-30px" id="search">
+                        <form action="">
+                            <input type="search" name="" id="" placeholder="Search">
+                            <button type="submit">
+                                <img class="icon" src="../icons/search-alt.svg" alt="search button">
+                            </button>
+                        </form>
+                    </div>
+                    <div id="header--menu">
+                        <div class="dropdown">
+                            <a href="shoppingCart.html">
+                                <img class="icon" src="../icons/shopping-cart-icon.png" alt="shopping cart">
+                            </a>
+                            <div class="dropdown-content">
+
+                                <div class="cart--dropdown-total">
+                                    <label for="">Total: not alot of $$</label>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="icon clickable" id="icon--menu" src="../icons/menu_icon.svg" alt="">
+                    </div>
+                </header>
+            </div>
+            <div class="main" id="main-nav">
+                <nav id="nav">
+                    <a class="nav--link" href="login.html">Login</a>
+                    <a class="nav--link" href="register.html">Register</a>
+                    <div id="drop-down-container">
+                        <a id="nav--account" class="nav--link" href="account.html">Account <img
+                                class="icon caret clickable" src="../icons/drop-down-icon.svg" alt="caret-down"></a>
+                        <div id="account--sub-menu" class="drop-down">
+                            <a class="drop-down-btn" href="new_offer.html">
+                                <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
+                                <p>New Offer</p>
+                            </a>
+                            <a class="drop-down-btn" href="analytics.html">
+                                <img src="../icons/graph.svg" alt="analytics" class="icon">
+                                <p>Analytics</p>
+                            </a>
+                            <a class="drop-down-btn" href="history.html">
+                                <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
+                                <p>History</p>
+                            </a>
+                            <a class="drop-down-btn" href="settings.html">
+                                <img src="../icons/cog.svg" alt="settings" class="icon">
+                                <p>Settings</p>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="main" id="main-body">
+            <div id="product-container">
+                <div class="product">
+                    <a href="../html/product.html">
+                        <img src="../pictures/placeholderCard.jpg" alt="" class="product--image">
+                    </a>
+                    <div class="product--info">
+                        <div class="flex-column">
+                            <a href="../html/product.html">
+                                <h3 class="product--title">
+                                    Product title
+                                </h3>
+                            </a>
+                            <div class="deleteable-counter">
+                                <img src="../icons/trash-can.svg" alt="" class="icon icon--trash-can clickable">
+                                <input type="number" name="amount-selector" id="amount-selector" value="1"
+                                    class="amount-selector">
+                            </div>
+                        </div>
+                        <p class="product--price-container">
+                            € <span class="product-price">30</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="checkout-container">
+                <h1>Your order</h1>
+                <div id="checkout--total-item-row" class="flex">
+                    <p>Cards <span>(4)</span></p>
+                    <p>€<span>50</span></p>
+                </div>
+                <div id="checktout-shipping-row" class="flex">
+                    <p>Shipping costs</p>
+                    <p>€<span>50</span></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main" id="main-footer">
+            <footer>
+                <p>Authors: Sander Bakker and Matthijs Bonke</p>
+                <p>Students from the Technical University of Delft</p>
+                <p style="float: right;">Contact us <a
+                        href="mailto:m.s.bonke@student.tudelft.nl, s.a.bakker-4@student.tudelft.nl?subject=The Best Website">here</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+    <script src="../javaScript/utility.js"></script>
+</body>
+
+</html>
