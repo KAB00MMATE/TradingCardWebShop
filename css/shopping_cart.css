@@ -50,12 +50,6 @@
     text-align: right;
 }
 
-.deleteable-counter {
-    display: flex;
-    align-items: center;
-    width: auto;
-}
-
 .amount-selector {
     padding: .5em;
     width: 90px;

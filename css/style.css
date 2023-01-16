@@ -577,12 +577,13 @@ img.logo {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
+    /* display: none; */
     position: absolute;
     overflow: hidden;
     padding: 1em;
     background-color: #f1f1f1;
     min-width: max-content;
+    height: fit-content;
     border-radius: 15px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -598,7 +599,13 @@ img.logo {
     justify-content: center;
 
     height: 200px;
-    padding: 100px;
+    /* padding: 100px; */
+}
+
+.deleteable-counter {
+    display: flex;
+    align-items: center;
+    width: auto;
 }
 
 .cart--dropdown-total {
