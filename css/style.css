@@ -15,6 +15,8 @@
     --clr-light: white;
     --clr-dark-blue: #2D51CF;
 
+    --clr-green: #13670C;
+
     --clr-transparent: #DFDFDF40;
 
     scrollbar-color: var(--clr-main-dark) #555;
