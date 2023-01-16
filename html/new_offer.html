@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <meta name="keywords" content="TradingCard, trading, CSE, Meme, shopping, shop">
+    <meta name="description" content="A shopping site for meme trading cards">
+    <meta name="author" content="Matthijs Bonke, Sander Bakker">
+    <link rel="icon" href="../pictures/logo.png">
+    <title>Tradingcard | New Offer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/new_offer.css">
+</head>
+<body>
+    <div id="main">
+        <div class="triangle-down"></div>
+        <div class="triangle-up"></div>
+        <div id="header-and-nav">
+            <div class="main" id="main-header">
+                <header>
+                    <a href="index.html">
+                        <img src="../pictures/logo.png" width="100px" alt="logo" id="logo">
+                    </a>
+                    <div class="border-30px" id="search">
+                        <form action="">
+                            <input type="search" name="" id="" placeholder="Search">
+                            <button type="submit">
+                                <img class="icon" src="../icons/search-alt.svg" alt="search button">
+                            </button>
+                        </form>
+                    </div>
+                    <div id="header--menu">
+                        <div class="dropdown">
+                            <a href="shoppingCart.html">
+                                <img class="icon" src="../icons/shopping-cart-icon.png" alt="shopping cart">
+                            </a>
+                            <div class="dropdown-content">
+
+                                <div class="cart--dropdown-total">
+                                    <label for="">Total: not alot of $$</label>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="icon clickable" id="icon--menu" src="../icons/menu_icon.svg" alt="">
+                    </div>
+                </header>
+            </div>
+            <div class="main" id="main-nav">
+                <nav id="nav">
+                    <a class="nav--link" href="login.html">Login</a>
+                    <a class="nav--link" href="register.html">Register</a>
+                    <div id="drop-down-container">
+                        <a id="nav--account" class="nav--link" href="account.html">Account <img
+                                class="icon caret clickable" src="../icons/drop-down-icon.svg" alt="caret-down"></a>
+                        <div id="account--sub-menu" class="drop-down">
+                            <a class="drop-down-btn" href="new_offer.html">
+                                <img src="../icons/circle-plus.svg" alt="Add offer" class="icon">
+                                <p>New Offer</p>
+                            </a>
+                            <a class="drop-down-btn" href="analytics.html">
+                                <img src="../icons/graph.svg" alt="analytics" class="icon">
+                                <p>Analytics</p>
+                            </a>
+                            <a class="drop-down-btn" href="history.html">
+                                <img src="../icons/chevron-down-circle.svg" alt="history" class="icon">
+                                <p>History</p>
+                            </a>
+                            <a class="drop-down-btn" href="settings.html">
+                                <img src="../icons/cog.svg" alt="settings" class="icon">
+                                <p>Settings</p>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="main" id="main-body">
+            <div id="new-offer-block">
+                <form action="index.html" autocomplete="on">
+                    <h1>Offer for new product</h1>
+                    <fieldset>                        
+                        <legend>Product Title</legend>
+                        <input type="text" name="product_title" required autofocus id="product_title">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Description</legend>
+                        <textarea required name="description" id="description" cols="30" rows="5"></textarea>
+                    </fieldset>
+
+                    <div id="block4">
+                        <div class="inline-flex">
+                            <div>
+                                <label for="price">Price per Item</label>
+                                <div id="currency-block">
+                                    €
+                                    <input type="number" name="price" id="price" min="0" value="1" step="0.01">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="quantity">Quantity</label>
+                                <input type="number" name="quantity" id="quantity" step="1" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="inline-flex">
+                            <div>
+                                <label for="tags">Tags</label>
+                                <input type="text" maxlength="20" id="input-line-tag">
+                                <button type="button" onclick="addTag()"><img src="../icons/plus.svg" alt="plus" width="10px"></button>
+                            </div>
+                            <div id="tags-block"></div>
+                        </div>
+                        <div class="inline-flex">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" id="image" accept=".png,.jpg,.jpeg" multiple>
+
+                        </div>
+                    </div>
+
+                    
+
+                    <div id="btn-block">
+                        <button class="submit-btn" type="reset">Reset</button>
+                        <button class="submit-btn" type="submit">Publish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="main" id="main-footer">
+            <footer>
+                <p>Authors: Sander Bakker and Matthijs Bonke</p>
+                <p>Students from the Technical University of Delft</p>
+                <p style="float: right;">Contact us <a href="mailto:m.s.bonke@student.tudelft.nl, s.a.bakker-4@student.tudelft.nl?subject=The Best Website">here</a></p>
+            </footer>
+        </div>
+    </div>
+    <script src="../javaScript/utility.js"></script>
+    <script src="../javaScript/new_offer.js"></script>
+</body>
+</html>
