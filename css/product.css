@@ -14,8 +14,7 @@
 }
 
 #main-container {
-    display: flex;
-    
+    gap: 1em;
 }
 
 .product--price {
@@ -24,30 +23,34 @@
 }
 
 #product-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    width: min-content;
+    width: fit-content;
     height: min-content;
 
-    background-color: white;
+    background-color: var(--clr-light);
 
     padding: 1em;
     border-radius: 10px;
-
     gap: 1em;
-    margin-bottom: 100px;
+    vertical-align: top;
+
+    margin-bottom: 3em;
 }
 
 #product--image {
     object-fit: contain;
     flex-shrink: 1;
-    /* width: 500px; */
 }
 
 #product--info {
     border: 1px solid black;
     border-radius: 10px;
     padding: 1em;
+}
+
+#product--description{
+    max-width: 500px;    
 }
 
 #product--price-cat-container {
@@ -121,11 +124,15 @@
     background-color: #FFFFFFCC;
     border-radius: 10px;
 
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 1em;
 
-    max-width: 20em;
+    max-width: 23em;
+
+    top: 0;
+
+    vertical-align: top;
 }
 
 #review--sort-on{
@@ -165,11 +172,28 @@
     border-radius: 10px;
     padding: 20px;
 
-    background: white;
+    background: var(--clr-light);
 
     width: auto;
 }
 
+@media (max-width: 1100px) {
+    #product-container{
+        flex-direction: column;
+    }    
+    #review-container{
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: visible;
+        max-width: 100%;
+    }
+
+    #review--sort-on {
+        position: sticky;
+        left: 0;
+        top: -3em;
+    }
+}
 
 .review--writer-card {
     background-color: #4D3434;
@@ -187,7 +211,7 @@
     min-width: max-content;
 
     border-radius: 10px;
-    gap: 1em;
+    column-gap: 2em;
 }
 
 
@@ -224,14 +248,13 @@
 
 .review--stars {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     border: 1px solid black;
     padding: 1em;
 
     gap: 1em;
 
 }
-
 
 
 .product--supplier {

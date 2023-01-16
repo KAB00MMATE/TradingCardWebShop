@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&display=swap'); */
 #main-body {
     scrollbar-width: none;
+    padding-left: 0;
 }
 
 #main-body:-webkit-scrollbar {
@@ -21,30 +22,43 @@
 
     margin: auto;
     width: 100%;
+    height: 100%;
+}
+
+
+#filter-area {
+    border-radius: 0px 10px 10px 0px;
+    height: auto;
+    width: fit-content;
+    background-color: var(--clr-grey);
+    margin-right: 1em;  
 }
 
 #filter-area>form {
-    background-color: var(--clr-grey);
-
     display: flex;
     flex-direction: column;
-
-
-
-    /* margin: 10px; */
-
     padding: 1em;
     width: fit-content;
 
-
-    /* align-items: center; */
-    /* margin-top: .5em; */
 }
 
 
+
+
 @media (max-width: 600px) {
-    #main-body {
+    #main-body{
+        padding-top: 0;
+        padding-left: 1em;
+    }
+
+    #main-container {
         flex-direction: column;
+    }
+
+    #filter-area{
+        border-radius: 0px 0px 10px 10px;
+        margin-right: 0;
+        margin-bottom: 1em;
     }
 
     #filter-area>form {
@@ -53,6 +67,7 @@
         flex-wrap: wrap;
     }
 
+   
 }
 
 
@@ -76,8 +91,6 @@ fieldset {
     gap: 1em;
 
     flex-grow: 1;
-
-    margin: 1em;
     max-width: none;
 }
 
