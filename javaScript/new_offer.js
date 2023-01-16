@@ -1,6 +1,10 @@
 let tag_input = document.getElementById("input-line-tag");
 let tag_output = document.getElementById("tags-block");
 
+function resetTags(){
+    tag_output.innerHTML="";
+}
+
 function addTag(){
     let text = tag_input.value;
     let text_node = document.createTextNode(text);
