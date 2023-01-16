@@ -81,6 +81,17 @@
 
 }
 
+@media (max-width: 500px) {
+    #main-content {
+        flex-direction: column;
+    }
+
+    #checkout-container {
+        order: -1;
+    }
+
+}
+
 .flex-column {
     display: flex;
     flex-direction: column;
