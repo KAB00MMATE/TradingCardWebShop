@@ -118,6 +118,10 @@ a {
     background: none;
 }
 
+#search button>img {
+    cursor: pointer;
+}
+
 #search .icon {
     height: 35px;
     margin-right: 20px;
