@@ -256,8 +256,9 @@ iframe[seamless] {
 
 #main-nav {
     background-color: var(--clr-transparent);
-    /* position: sticky;
-    top:84px;  header height */
+    position: absolute;
+    top:84px; /* this the header height */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 #drop-down-container {
@@ -345,6 +346,7 @@ iframe[seamless] {
     border: 1px solid black;
     border-radius: 10px;
     font-size: large;
+    background-color: var(--clr-light);
 }
 
 .nav--link, .nav--link * {
