@@ -68,7 +68,7 @@ body {
     margin: 0;
     background-color: var(--clr-main-orange);
     font-family: 'Inter', sans-serif;
-    min-height: calc(100vh - 30px);
+    min-height: 100vh;
     /* Account for footer */
     /* margin:auto; */
     width: 100%;
