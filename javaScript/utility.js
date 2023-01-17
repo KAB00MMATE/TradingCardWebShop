@@ -15,28 +15,19 @@ function dropdownNav() {
     let iconHamburger = document.getElementById("icon--menu");
 
 
-    mainBody.style.transition = "min-height 300ms 0s ease-in-out";
     if (nav.style.maxHeight == "60px") {
         iconHamburger.style.transform = "rotate(0)";
         
         collapseElement(nav);
-        mainBody.style.minHeight = "calc(100vh - 114px)";
     } else {
         iconHamburger.style.transform = "rotate(180deg)";
         expandElement(nav, 60);
-        mainBody.style.minHeight = "calc(100vh - 174px)";
     }
 
     // The header is 84px height
     // nav is switching from 0 to 60 px
     // footer is 30px normally but this can change if the windows get very small
 
-    // a time out is needed here because otherwise the transition doesn't happen
-    setTimeout(function(){mainBody.style.transition = "none";}, 300);
-    // this create a problem however if you spamm the button you get a scrollbar
-    // this needs to be fixed by adding a cooldown on the button [TODO]
-
-    // set a timeout to prevent spamming
 
 
     
