@@ -73,3 +73,15 @@ function() {
     setTimeout(function() {document.getElementById("nav").style.overflow = 'hidden';}, 300);
     
 });
+
+function addOne(id){
+    return ++document.getElementById(id).value;
+}
+
+function removeOne(id){
+    let current = document.getElementById(id)
+    if (current.value > current.min) {
+        return --current.value;
+    }   
+    return current.value; 
+}
