@@ -98,7 +98,7 @@
                     <h1>Register</h1>
                     <fieldset class="input-adjusted">
                         <legend>User ID</legend>
-                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12">
+                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12" required>
                     </fieldset>
                     <fieldset class="input-adjusted">                        
                         <legend>E-mail</legend>
@@ -109,11 +109,11 @@
                         <legend>Password</legend>
                         <div>
                             <label for="password_user">New Password</label>
-                            <input type="password" name="password_user" id="password_user" required placeholder="Welcome1">
+                            <input type="password" name="password_user" id="password_user" required placeholder="Welcome1" minlength="12">
                         </div>
                         <div>
                             <label for="password_user2">Repeat Password</label>
-                            <input type="password" name="password_user2" id="password_user2" required placeholder="Welcome1">
+                            <input type="password" name="password_user2" id="password_user2" required placeholder="Welcome1" minlength="12">
                         </div>
                     </fieldset>
 
