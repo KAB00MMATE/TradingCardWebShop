@@ -96,7 +96,10 @@
             <div id="register-block">
                 <form action="index.html" autocomplete="on" method="post">
                     <h1>Register</h1>
-                    <input type="hidden" id="userID" name="userID" value="69">
+                    <fieldset class="input-adjusted">
+                        <legend>User ID</legend>
+                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12">
+                    </fieldset>
                     <fieldset class="input-adjusted">                        
                         <legend>E-mail</legend>
                         <input type="email" name="email_user" id="email_user" autofocus required placeholder="bob@gmail.com">
@@ -202,6 +205,7 @@
 
                     <div id="btn-block">
                         <button class="submit-btn" type="reset">Reset</button>
+                        <button class="submit-btn" type="button" onclick="validate()">Validate</button>
                         <button class="submit-btn" type="submit">Create Account</button>
                     </div>
                 </form>
@@ -217,5 +221,6 @@
         </div>
     </div>
     <script src="../javaScript/utility.js"></script>
+    <script src="../javaScript/sign_up.js"></script>
 </body>
 </html>
