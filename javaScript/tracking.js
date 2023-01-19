@@ -1,14 +1,22 @@
 // Global events
-let timeStart = Date.now();
+const timeStart = Date.now();
 let totalMouseClicks = 0;
 
 document.addEventListener("click", () => {
-    console.log("click!");
     totalMouseClicks++;
 });
 
 
-// Text email and password fields should have their own records
+// Define elements on the page that are used in functions.
+const statsElement = document.querySelector("#tracking-stats");
+const clicksElement = document.querySelector("#tracking-stats-clicks");
+const timeElement = document.querySelector("#tracking-stats-time");
+const keyElement = document.querySelector("#tracking-stats-key");
+const charsElement = document.querySelector("#tracking-stats-chars-typed");
+
+
+
+// Text email and password fields should have their own records of the keypresses and the amount of characters they contain.
 let charactersPerElement = {};
 let keyPressesPerInput = {};
 document.querySelectorAll("form input:is([type='text'], [type='email'], [type='password'])").forEach(
@@ -21,29 +29,28 @@ document.querySelectorAll("form input:is([type='text'], [type='email'], [type='p
     }
 );
 
+
 // Hookup submit button to the functionality
-let statsElement = document.querySelector("#tracking-stats");
 document.querySelector("#btn-block :nth-child(3)").addEventListener('click', () => {
     updateInfo();
-    statsElement.style.display  = "block";
+    statsElement.style.display  = "block"; // Display the by-default-hidden div
 });
 
-let clicksElement = document.querySelector("#tracking-stats-clicks");
-let timeElement = document.querySelector("#tracking-stats-time");
-let keyElement = document.querySelector("#tracking-stats-key");
-let charsElement = document.querySelector("#tracking-stats-chars-typed");
 
+
+
+
+// Helper functions
+
+/**
+ * Sets the innerHTML of the targeted elements on the page to what they should be at the time of the function call
+ */
 function updateInfo(){
     clicksElement.innerHTML = totalMouseClicks;
     timeElement.innerHTML = calculateTimeSpent();
     keyElement.innerHTML = dictToString(keyPressesPerInput);
     charsElement.innerHTML = dictToString(charactersPerElement);
 }
-
-
-
-
-// Helper functions
 
 /** * 
  * @param {object} dictionary 
@@ -86,6 +93,12 @@ function formatTime(milliseconds) {
     return `${numberToStringWithDigits(hours, 2)}:${numberToStringWithDigits(minutes, 2)}:${numberToStringWithDigits(seconds, 2)}`;
 }
 
+/**
+ * 
+ * @param {int} number 
+ * @param {int} digits 
+ * @returns The number as a string, having <digits> amount of digits. Example: number = 2, digits = 3 results in '002'
+ */
 function numberToStringWithDigits(number, digits) {
     return number.toLocaleString('en-US', { minimumIntegerDigits: digits, useGrouping: false });
 }
