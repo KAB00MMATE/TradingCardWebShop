@@ -6,24 +6,58 @@ document.addEventListener("click", () => {
     console.log("click!");
     totalMouseClicks++;
 });
-document.addEventListener("keydown", () => {
-    console.log("key!");
-    totalKeyPresses++;
-});
 
 
 // Text email and password fields should have their own records
-let mouseClicksPerInput = {};
+let charactersPerElement = {};
 let keyPressesPerInput = {};
 document.querySelectorAll("form input:is([type='text'], [type='email'], [type='password'])").forEach(
     (element) => {
-        mouseClicksPerInput[element.id] = 0;
         keyPressesPerInput[element.id] = 0;
+        charactersPerElement[element.id] = element.innerHTML.length;
 
-        element.addEventListener("click", () => {mouseClicksPerInput[element.id]++;});
+        element.addEventListener("change", () => {charactersPerElement[element.id] = element.value.length;});
         element.addEventListener("keydown", () => {keyPressesPerInput[element.id]++;});
     }
 );
+
+// Hookup submit button to the functionality
+let statsElement = document.querySelector("#tracking-stats");
+document.querySelector("#btn-block :nth-child(3)").addEventListener('click', () => {
+    updateInfo();
+    statsElement.style.display  = "block";
+});
+
+let clicksElement = document.querySelector("#tracking-stats-clicks");
+let timeElement = document.querySelector("#tracking-stats-time");
+let keyElement = document.querySelector("#tracking-stats-key");
+let charsElement = document.querySelector("#tracking-stats-chars-typed");
+
+function updateInfo(){
+    clicksElement.innerHTML = totalMouseClicks;
+    timeElement.innerHTML = calculateTimeSpent();
+    keyElement.innerHTML = dictToString(keyPressesPerInput);
+    charsElement.innerHTML = dictToString(charactersPerElement);
+}
+
+
+
+
+// Helper functions
+
+/** * 
+ * @param {object} dictionary 
+ * @returns A multiline string with format <key>: <value> per entry. Each entry is on a new line.
+ */
+
+function dictToString(dictionary){
+    let resultString = "";
+    for (const [key, value] of Object.entries(dictionary)) {
+        resultString += `${key}: ${value}\n`;
+    }
+
+    return resultString;
+}
 
 /**
  * @returns The time spent on this page since the page has been loaded untill this function is called

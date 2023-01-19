@@ -65,3 +65,7 @@
     display:flex;
     justify-content: space-between;
 }
+
+#tracking-stats{
+    display: none;
+}
