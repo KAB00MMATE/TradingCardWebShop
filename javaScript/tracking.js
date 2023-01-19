@@ -34,16 +34,7 @@ statTrackingElements.forEach(
 
 
         const newElement = document.createElement("p");
-        newElement.style.cssText = `
-            padding: 1em;
-            display: none;
-            border: 1px solid;
-            border-radius: 10px;
-            text-align: center;
-            background: var(--clr-grey);
-            box-shadow: 1px 1px 1px;
-            width: fit-content;
-        `;
+        newElement.classList.add("stats");
         newElement.innerText = `${element.id}`;
         newElement.id = element.id + displayElementSuffix;
         element.parentElement.appendChild(newElement);
@@ -76,7 +67,7 @@ document.querySelector("#btn-block :nth-child(3)").addEventListener('click', () 
  */
 function revealStatsElements() {
     statDisplayElements.forEach((element) => element.style.display = "block");
-    statsElement.style.display = "block"; // Display the by-default-hidden div
+    statsElement.style.display = "block";
 }
 
 /**
