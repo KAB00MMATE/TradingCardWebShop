@@ -4,8 +4,12 @@ const path = "../documents/dictionary.txt";
 const dictionary = loadFile(path).split("\n");
 
 function validate(){
-    // console.log("user ID check: " + validateUserID());
+    console.log("user ID check: " + validateUserID());
     console.log("password check: " + validatePWD());
+    console.log("name check: ", validateName());
+    console.log("country check: ", validateCountry());
+    console.log("gender check: ", validateGender());
+    console.log("language check: ", validateLanguage());
 }
 
 function validateUserID() {
@@ -174,9 +178,81 @@ function validatePWD() {
     return true;
 }
 
+function validateName(){
+    first_name = document.getElementById("fname").value;
+    last_name = document.getElementById("lname").value;
 
+// check if the input is not empty. Redunded because the form has REQUIRED
+    if (emptyString(first_name)){
+        console.log("empty first name");
+        return false;
+    }
 
+    if (emptyString(last_name)){
+        console.log("empty last name");
+        return false;
+    }
 
+// this system is not bulletproof. If you enter a character that is not in the list, the input will get accepted.
+    if (containsNumber(first_name)){
+        console.log("first name contains number");
+        return false;
+    }
+
+    if (containsNumber(last_name)){
+        console.log("last name contains number");
+        return false;
+    }
+
+    if (containsSpecialChar(first_name)){
+        console.log("first name contains special character");
+        return false;
+    }
+
+    if (containsSpecialChar(last_name)){
+        console.log("last name contains special character");
+        return false;
+    }
+
+    return true;
+}
+
+// function for checking if a country is choosen.
+// this function is technically not really needed because we can just set the first option as default
+function validateCountry(){
+    input_country = document.getElementById("country").value;
+
+    if (input_country == "default"){
+        console.log("country not choosen");
+        return false
+    }
+
+    return true;
+}
+
+// this check is a bit not needed, because in the form we use CHECKED, meaning always one is already checked
+function validateGender(){
+    input_male = document.getElementById("male").checked;
+    input_female = document.getElementById("female").checked;
+    input_other = document.getElementById("other").checked;
+    
+    return input_male || input_female || input_other;
+}
+
+// function for checking if a language is choosen.
+// this function is technically not really needed because we can just set the first option as default
+function validateLanguage(){
+    input = document.getElementById("language").value;
+
+    if (input == "default"){
+        console.log("language not choosen");
+        return false;
+    }
+
+    return true;
+}
+
+// function for loading the file content
 function loadFile(filePath) {
     var result = null;
     var xmlhttp = new XMLHttpRequest();
