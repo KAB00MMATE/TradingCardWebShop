@@ -14,27 +14,54 @@ const timeElement = document.querySelector("#tracking-stats-time");
 const keyElement = document.querySelector("#tracking-stats-key");
 const charsElement = document.querySelector("#tracking-stats-chars-typed");
 
+const statTrackingElements = document.querySelectorAll("form input:is([type='text'], [type='email'], [type='password'])");
 
 
 // Text email and password fields should have their own records of the keypresses and the amount of characters they contain.
-let charactersPerElement = {};
-let keyPressesPerInput = {};
-document.querySelectorAll("form input:is([type='text'], [type='email'], [type='password'])").forEach(
+const charactersPerElement = {};
+const keyPressesPerInput = {};
+const statDisplayElements = [];
+
+const displayElementSuffix = "__display-stats";
+
+statTrackingElements.forEach(
     (element) => {
         keyPressesPerInput[element.id] = 0;
-        charactersPerElement[element.id] = element.innerHTML.length;
+        charactersPerElement[element.id] = element.value.length;
 
-        element.addEventListener("change", () => {charactersPerElement[element.id] = element.value.length;});
-        element.addEventListener("keydown", () => {keyPressesPerInput[element.id]++;});
+        element.addEventListener("change", () => { charactersPerElement[element.id] = element.value.length; });
+        element.addEventListener("keydown", () => { keyPressesPerInput[element.id]++; });
+
+
+        const newElement = document.createElement("p");
+        newElement.style.cssText = `
+            padding: 1em;
+            display: none;
+            border: 1px solid;
+            border-radius: 10px;
+            text-align: center;
+            background: var(--clr-grey);
+            box-shadow: 1px 1px 1px;
+            width: fit-content;
+        `;
+        newElement.innerText = `${element.id}`;
+        newElement.id = element.id + displayElementSuffix;
+        element.parentElement.appendChild(newElement);
+        statDisplayElements.push(newElement);
     }
 );
 
 
 // Hookup submit button to the functionality
+
+
+
 document.querySelector("#btn-block :nth-child(3)").addEventListener('click', () => {
     updateInfo();
-    statsElement.style.display  = "block"; // Display the by-default-hidden div
+    revealStatsElements();
 });
+
+
 
 
 
@@ -42,22 +69,54 @@ document.querySelector("#btn-block :nth-child(3)").addEventListener('click', () 
 
 // Helper functions
 
+
+/**
+ * Reveals the HTML Elements that contain the behavioral tracking stats and which 
+ * have been hidden by default
+ */
+function revealStatsElements() {
+    statDisplayElements.forEach((element) => element.style.display = "block");
+    statsElement.style.display = "block"; // Display the by-default-hidden div
+}
+
 /**
  * Sets the innerHTML of the targeted elements on the page to what they should be at the time of the function call
  */
-function updateInfo(){
+function updateInfo() {
+
+    // Set the global stats
     clicksElement.innerHTML = totalMouseClicks;
     timeElement.innerHTML = calculateTimeSpent();
-    keyElement.innerHTML = dictToString(keyPressesPerInput);
-    charsElement.innerHTML = dictToString(charactersPerElement);
+    keyElement.innerHTML = sumArray(Object.values(keyPressesPerInput));
+    charsElement.innerHTML = sumArray(Object.values(charactersPerElement));
+
+
+    // Set the stats for each input element 
+    statDisplayElements.forEach((e) => {
+        const parentElementID = e.id.split(displayElementSuffix)[0];
+        e.innerText =   `Keys pressed: ${keyPressesPerInput[parentElementID]} | Characters typed: ${charactersPerElement[parentElementID]}`;
+    });
 }
+
+
+/**
+ * Sums the values in the array and returns the result 
+ * @param {[int]} array 
+ * @returns {int} The sum of the array
+ */
+function sumArray(array) {
+    sum = 0;
+    array.forEach((e) => sum += e);
+    return sum;
+}
+
 
 /** * 
  * @param {object} dictionary 
  * @returns A multiline string with format <key>: <value> per entry. Each entry is on a new line.
  */
 
-function dictToString(dictionary){
+function dictToString(dictionary) {
     let resultString = "";
     for (const [key, value] of Object.entries(dictionary)) {
         resultString += `${key}: ${value}\n`;

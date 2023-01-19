@@ -67,12 +67,9 @@
 }
 
 #tracking-stats{
-    /* display: none;
-     */
+    display: none;
     text-align: center;
     border: 1px solid;
     border-radius: 10px;
     line-height: 2em;
-    /* padding-left: 2em; */
-
 }
