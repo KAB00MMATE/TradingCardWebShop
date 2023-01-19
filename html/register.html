@@ -98,11 +98,13 @@
                     <h1>Register</h1>
                     <fieldset class="input-adjusted">
                         <legend>User ID</legend>
-                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12" required>
+                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12" required  autofocus>
+                        <div id="userID-output"></div>
                     </fieldset>
                     <fieldset class="input-adjusted">                        
                         <legend>E-mail</legend>
-                        <input type="email" name="email_user" id="email_user" autofocus required placeholder="bob@gmail.com">
+                        <input type="email" name="email_user" id="email_user" required placeholder="bob@gmail.com">
+                        <div id="email_user-output"></div>
                     </fieldset>
 
                     <fieldset class="grid50-50 input-adjusted">
@@ -115,6 +117,7 @@
                             <label for="password_user2">Repeat Password</label>
                             <input type="password" name="password_user2" id="password_user2" required placeholder="Welcome1" minlength="12">
                         </div>
+                        <div id="password_user-output"></div>
                     </fieldset>
 
                     <fieldset class="grid50-50 input-adjusted">
@@ -127,6 +130,7 @@
                             <label for="lname">Last name</label>
                             <input type="text" name="lname" id="lname" required placeholder="Bakker">
                         </div>
+                        <div id="name-output"></div>
                     </fieldset>
 
                     <fieldset class="grid50-50">
@@ -169,6 +173,7 @@
                                 <option value="belgium">Belgium</option>
                                 <option value="other">Other</option>
                             </select>
+                            <div id="country-output"></div>
                         </div>
                     </fieldset>
 
@@ -186,6 +191,7 @@
                             <input type="radio" name="gender" id="other">
                             <label for="other">Other</label>
                         </div>
+                        <div id="gender-output"></div>
                     </fieldset>
 
                     <fieldset>
@@ -199,6 +205,7 @@
                             <option value="german">German</option>
                             <option value="other">Other</option>
                         </select><br>
+                        <div id="language-output"></div><br>
                         <label for="profile_picture">Pick a profile picture</label>
                         <input type="file" name="profile_picture" id="profile_picture" accept=".png,.svg,.jpg,.jpeg"><br>
                         <label for="bio">About you:</label><br>
