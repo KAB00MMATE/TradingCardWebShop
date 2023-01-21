@@ -94,16 +94,16 @@
 
         <div class="main" id="main-body">
             <div id="register-block">
-                <form action="index.html" onsubmit="validate()" autocomplete="on" method="post">
+                <form action="" onsubmit="return validate();" autocomplete="on" method="post">
                     <h1>Register</h1>
                     <fieldset class="input-adjusted">
                         <legend>User ID</legend>
-                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12" required  autofocus>
+                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12" required  autofocus title="">
                         <div id="userID-output"></div>
                     </fieldset>
                     <fieldset class="input-adjusted">                        
                         <legend>E-mail</legend>
-                        <input type="email" name="email_user" id="email_user" required placeholder="bob@gmail.com">
+                        <input type="email" name="email_user" id="email_user" placeholder="bob@gmail.com">
                         <div id="email_user-output"></div>
                     </fieldset>
 
@@ -111,11 +111,11 @@
                         <legend>Password</legend>
                         <div>
                             <label for="password_user">New Password</label>
-                            <input type="password" name="password_user" id="password_user" required placeholder="Welcome1" minlength="12">
+                            <input type="password" name="password_user" id="password_user" placeholder="Welcome1" minlength="12">
                         </div>
                         <div>
                             <label for="password_user2">Repeat Password</label>
-                            <input type="password" name="password_user2" id="password_user2" required placeholder="Welcome1" minlength="12">
+                            <input type="password" name="password_user2" id="password_user2" placeholder="Welcome1" minlength="12">
                         </div>
                         <div id="password_user-output"></div>
                     </fieldset>
@@ -124,11 +124,11 @@
                         <legend>Name</legend>
                         <div>
                             <label for="fname">First name</label>
-                            <input type="text" name="fname" id="fname" required placeholder="Bob">
+                            <input type="text" name="fname" id="fname" placeholder="Bob">
                         </div>
                         <div>
                             <label for="lname">Last name</label>
-                            <input type="text" name="lname" id="lname" required placeholder="Bakker">
+                            <input type="text" name="lname" id="lname" placeholder="Bakker">
                         </div>
                         <div id="fname-output"></div>
                         <div id="lname-output"></div>
@@ -167,7 +167,7 @@
                         <div>
                             <label for="country">Country</label>
                             <select name="country" id="country">
-                                <option value="default">Choose a country</option>
+                                <option value="">Choose a country</option>
                                 <option value="netherlands">Netherlands</option>
                                 <option value="uk">United Kingdom</option>
                                 <option value="germany">Germany</option>
@@ -181,15 +181,15 @@
                     <fieldset class="grid3-way">
                         <legend>Gender</legend>
                         <div>
-                            <input type="radio" name="gender" checked id="male">
+                            <input type="radio" name="gender" checked id="male" value="male">
                             <label for="male">Male</label>
                         </div>
                         <div>
-                            <input type="radio" name="gender" id="female">
+                            <input type="radio" name="gender" id="female" value="female">
                             <label for="female">Female</label>
                         </div>
                         <div>
-                            <input type="radio" name="gender" id="other">
+                            <input type="radio" name="gender" id="other" value="other">
                             <label for="other">Other</label>
                         </div>
                         <div id="gender-output"></div>
@@ -199,7 +199,7 @@
                         <legend>Personality</legend>
                         <label for="language">Language</label>
                         <select name="language" id="language">
-                            <option value="default">Pick a language</option>
+                            <option value="">Pick a language</option>
                             <option value="dutch">Dutch</option>
                             <option value="english">English</option>
                             <option value="french">French</option>
