@@ -5,6 +5,7 @@ const dictionary = loadFile(path).split("\n");
 
 function validate(){
     console.log("user ID check: " + validateUserID());
+    console.log("email check: " + validateEMail());
     console.log("password check: " + validatePWD());
     console.log("name check: ", validateName());
     console.log("country check: ", validateCountry());
@@ -17,28 +18,35 @@ function validateUserID() {
     const max = 12;
     input_userID_Value = document.getElementById("userID").value;
 
+    output = document.getElementById("userID-output");
+
 // checks if the input is empty, this is technically not needed. Because we can just use REQUIRED
     if (emptyString(input_userID_Value)){
         console.log("User ID is empty");
+        Incorrect(output, "User ID is empty");
         return false;
     }
 
 // although this is already checked through the form, with minlength="5" and maxlength="12"
     if (!checkLength(input_userID_Value, min, max)){
         console.log("Length is incorrect: " + input_userID_Value.length);
+        Incorrect(output, "Length should be between: " + min + " and " + max);
         return false;
     }
     
     if (!startsWithCapital(input_userID_Value)){
         console.log("Doesn't start with a capital letter: " + input_userID_Value.charAt(0));
+        Incorrect(output, "Doesn't start with a capital letter");
         return false;
     }
 
     if (!endsWithNumberOrSpecial(input_userID_Value)){
         console.log("Doesn't end with a special character or number: " + input_userID_Value.charAt(input_userID_Value.length-1));
+        Incorrect(output, "Doesn't end with a special character or number");
         return false;
     }
 
+    Correct(output, "User ID is accepted")
     return true;
 }
 
@@ -120,11 +128,14 @@ function validatePWD() {
     input_PWD_Value = document.getElementById("password_user").value;
     input_PWD2_Value = document.getElementById("password_user2").value;
 
+    output = document.getElementById("password_user-output");
+
 // checks if both passwords are the same
     if (input_PWD_Value !== input_PWD2_Value){
         console.log("Passwords are not the same");
         console.log("PWD1: " + input_PWD_Value);
         console.log("PWD2: " + input_PWD2_Value);
+        Incorrect(output, "Passwords are not the same");
         return false;
     }
 
@@ -132,12 +143,14 @@ function validatePWD() {
 // checks if the input is empty, this is technically not needed. Because we can just use REQUIRED
     if (emptyString(input_PWD_Value)){
         console.log("Password is empty");
+        Incorrect(output, "Password is empty");
         return false;
     }
 
 // although this is already checked through the form, with minlength="12"
     if (!checkLength(input_PWD_Value, min)){
         console.log("Length is incorrect: " + input_PWD_Value.length);
+        Incorrect(output, "Too short, min: " + min);
         return false;
     }else{
         // checks if the input under the recommended length
@@ -149,30 +162,36 @@ function validatePWD() {
 // checks if there are lowercase letters
     if (!containsLowercase(input_PWD_Value)){
         console.log("Doesn't contain lowercase letters");
+        Incorrect(output, "Doesn't contain a lowercase letter");
         return false;
     }
 
 // checks if there are uppercase letters
     if (!containsUppercase(input_PWD_Value)){
         console.log("Doesn't contain uppercase letters");
+        Incorrect(output, "Doesn't contain uppercase letter");
         return false;
     }
 
 // checks if there are numbers
     if (!containsNumber(input_PWD_Value)){
         console.log("Doesn't contain numbers");
+        Incorrect(output, "Doesn't contain a number");
         return false;
     }
 
 // checks if there are special characters
     if (!containsSpecialChar(input_PWD_Value)){
         console.log("Doesn't contain special characters");
+        Incorrect(output, "Doesn't contain a special character");
         return false;
     }
 
 // checks if the password is a known word. this a bit weird because numbers are not in the dictionary
     if (dictionary.includes(input_PWD_Value.toLowerCase())){
-        console.log("This password is just a normal word")
+        console.log("This password is just a normal word");
+        Incorrect(output, "Password has a word in it");
+        return false;
     }
 
     return true;
@@ -181,39 +200,50 @@ function validatePWD() {
 function validateName(){
     first_name = document.getElementById("fname").value;
     last_name = document.getElementById("lname").value;
+    output_first = document.getElementById("fname-output");
+    output_last = document.getElementById("lname-output");
+    output_last.innerHTML = "yoyoyoyoy";
 
 // check if the input is not empty. Redunded because the form has REQUIRED
     if (emptyString(first_name)){
         console.log("empty first name");
+        Incorrect(output_first, "Empty first name");
         return false;
     }
 
     if (emptyString(last_name)){
         console.log("empty last name");
+        Incorrect(output_last, "Empty last name");
         return false;
     }
 
 // this system is not bulletproof. If you enter a character that is not in the list, the input will get accepted.
     if (containsNumber(first_name)){
         console.log("first name contains number");
+        Incorrect(output_first, "First name contains a number");
         return false;
     }
 
     if (containsNumber(last_name)){
         console.log("last name contains number");
+        Incorrect(output_last, "Last name contains a number");
         return false;
     }
 
     if (containsSpecialChar(first_name)){
         console.log("first name contains special character");
+        Incorrect(output_first, "First name contains a special character");
         return false;
     }
 
     if (containsSpecialChar(last_name)){
         console.log("last name contains special character");
+        Incorrect(output_last, "Last name contains a special character");
         return false;
     }
 
+    Correct(output_first, "First name accepted");
+    Correct(output_last, "Last name accepted");
     return true;
 }
 
@@ -252,14 +282,45 @@ function validateLanguage(){
     return true;
 }
 
+function validateEMail(){
+    input = document.getElementById("email_user").value;
+    output = document.getElementById("email_user-output");
+    
+    if (emptyString(input)){
+        console.log("Email empty");
+        Incorrect(output, "E-mail field is empty");
+        return false;
+    }
+
+    if (!/@/.test(input)){
+        console.log("Email doesn't contain @");
+        Incorrect(output, "E-mail field doesn't contain @");
+        return false;
+    }
+
+    return true;
+}
+
+// changes the output field to the correct style
+function Correct(node, text){
+    node.innerHTML = text;
+    node.className = "input-correct";
+}
+
+// changes the output field to the incorrect style
+function Incorrect(node, text){
+    node.innerHTML = text;
+    node.className = "input-wrong";
+}
+
 // function for loading the file content
 function loadFile(filePath) {
-    var result = null;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", filePath, false);
-    xmlhttp.send();
-    if (xmlhttp.status == 200) {
-      result = xmlhttp.responseText;
+    var req = new XMLHttpRequest();
+    req.open("GET", filePath, false);
+    req.send();
+    var result = "nothing :)";
+    if (req.status == 200) {
+      result = req.responseText;
     }
     return result;
 }

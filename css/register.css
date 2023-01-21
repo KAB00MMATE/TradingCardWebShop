@@ -65,3 +65,15 @@
     display:flex;
     justify-content: space-between;
 }
+
+.input-wrong{
+    padding: 1em;
+    background-color: red;
+    color: white;
+}
+
+.input-correct{
+    padding: 1em;
+    background-color: green;
+    color: white;
+}

@@ -94,7 +94,7 @@
 
         <div class="main" id="main-body">
             <div id="register-block">
-                <form action="index.html" autocomplete="on" method="post">
+                <form action="index.html" onsubmit="validate()" autocomplete="on" method="post">
                     <h1>Register</h1>
                     <fieldset class="input-adjusted">
                         <legend>User ID</legend>
@@ -130,7 +130,8 @@
                             <label for="lname">Last name</label>
                             <input type="text" name="lname" id="lname" required placeholder="Bakker">
                         </div>
-                        <div id="name-output"></div>
+                        <div id="fname-output"></div>
+                        <div id="lname-output"></div>
                     </fieldset>
 
                     <fieldset class="grid50-50">
