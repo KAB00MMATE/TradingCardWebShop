@@ -325,3 +325,39 @@ function loadFile(filePath) {
     return result;
 }
 
+function alertInfo(){
+    user_id = document.getElementById("userID").value;
+    email = document.getElementById("email_user").value;
+    PWD = document.getElementById("password_user").value;
+    fname = document.getElementById("fname").value;
+    lname = document.getElementById("lname").value;
+    account_type = document.querySelector('input[name="account_type"]:checked').value;
+    street = document.getElementById("street_name").value;
+    house_number = document.getElementById("house_number").value;
+    city = document.getElementById("city").value;
+    zipcode = document.getElementById("zip_code").value;
+    country = document.getElementById("country").value;
+    gender = document.querySelector('input[name="gender"]:checked').value;
+    language = document.getElementById("language").value;
+    image = document.getElementById("profile_picture").value;
+    bio = document.getElementById("bio").value;
+
+    let text = "";
+    text += "User ID: " + user_id + "\n";
+    text += "Email: " + email + "\n";
+    text += "Password: " + PWD + "\n";
+    text += "First name: " + fname + "\n";
+    text += "Last name: " + lname + "\n";
+    text += "Account Type: " + account_type + "\n";
+    text += "Street Name: " + street + "\n";
+    text += "House number: " + house_number + "\n";
+    text += "City: " + city + "\n";
+    text += "Zip Code: " + zipcode + "\n";
+    text += "Country: " + country + "\n";
+    text += "Gender: " + gender + "\n";
+    text += "Language: " + language + "\n";
+    text += "Profile picture: " + image + "\n";
+    text += "Bio: " + bio + "\n";
+    alert(text);
+    return false;
+}
