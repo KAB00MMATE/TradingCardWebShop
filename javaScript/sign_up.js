@@ -99,7 +99,7 @@ function validateLanguage() {
     output = document.getElementById("language-output");
 
     pattern = /.+/; // Note that the default option is "", so any character will indicate a non-default option chosen.
-    return validatePattern(pattern, input_country, output);
+    return validatePattern(pattern, input, output);
 }
 
 function validateEMail() {
