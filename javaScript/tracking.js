@@ -14,8 +14,11 @@ const timeElement = document.querySelector("#tracking-stats-time");
 const keyElement = document.querySelector("#tracking-stats-key");
 const charsElement = document.querySelector("#tracking-stats-chars-typed");
 
-// NodeList (Immutable!) of elements in the DOM that should keep track of their own stats: keypresses and characters typed
-const statTrackingElements = document.querySelectorAll("form input:is([type='text'], [type='email'], [type='password']");
+// Array elements in the DOM that should keep track of their own stats: keypresses and characters typed
+const statTrackingElements = [];
+// Array.prototype.push.apply(a, b) -> add all from b to a
+Array.prototype.push.apply(statTrackingElements, document.querySelectorAll("form input:is([type='text'], [type='email'], [type='password']"));
+statTrackingElements.push(document.getElementById("bio"));
 
 // Text, email and password fields should have their own records of the keypresses and the amount of characters they contain.
 const charactersPerElement = {};
