@@ -67,8 +67,7 @@
 }
 
 .stats {
-    display: none;
-
+    /* display: none; */
     padding: 1em;
     border: 1px solid;
     border-radius: 10px;
@@ -81,4 +80,6 @@
 
 #tracking-stats {
     line-height: 2em;
+    margin: auto;
+    margin-bottom: 1em;
 }
