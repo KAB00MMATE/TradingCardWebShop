@@ -1,4 +1,4 @@
-const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+const specialChars = "`!@#$%^&*()_+-=[]{}\\\";':|,.<>/?~";
 const path = "../documents/dictionary.txt";
 
 const dictionary = loadFile(path).split("\n");
@@ -86,24 +86,65 @@ function isCapital(letter){
     }
 }
 
+// checks if the input is a lowercase letter
+function isLowerCase(letter){
+    if (!isNaN(letter*69)){
+        return false;
+    }
+    if (letter == letter.toUpperCase()){
+        return false;
+    }
+    if (letter == letter.toLowerCase()){
+        return true;
+    }
+}
+
 // return true if the word or char contains one of the special characters
 function containsSpecialChar(word){
-    return specialChars.test(word)
+    for (i = 0; i < word.length; i++){
+        if (isSpecialChar(word.charAt(i))){
+            return true;
+        }
+    }
+    return false;
+}
+
+function isSpecialChar(letter){
+    return specialChars.includes(letter);
 }
 
 // return true if word or char contains uppercase letter
 function containsUppercase(word){
-    return /[A-Z]/.test(word);
+    for (i = 0; i < word.length; i++){
+        if (isCapital(word.charAt(i))){
+            return true;
+        }
+    }
+    return false;
 }
 
 // return true if word or char contains lowercase letter
 function containsLowercase(word){
-    return /[a-z]/.test(word);
+    for (i = 0; i < word.length; i++){
+        if (isLowerCase(word.charAt(i))){
+            return true;
+        }
+    }
+    return false;
 }
 
 // return true if word or char contains a number
 function containsNumber(word){
-    return /[0-9]/.test(word);
+    for (i = 0; i < word.length; i++){
+        if (isNumber(word.charAt(i))){
+            return true;
+        }
+    }
+    return false;
+}
+
+function isNumber(letter){
+    return !isNaN(letter*69);
 }
 
 // return true if the word ends with a number or a special character
@@ -152,11 +193,6 @@ function validatePWD() {
         console.log("Length is incorrect: " + input_PWD_Value.length);
         Incorrect(output, "Too short, min: " + min);
         return false;
-    }else{
-        // checks if the input under the recommended length
-        if (!checkLength(input_PWD_Value, recommended)){
-            console.log("Password is a bit short, recommended length: " + recommended);
-        }
     }
 
 // checks if there are lowercase letters
@@ -194,6 +230,14 @@ function validatePWD() {
         return false;
     }
 
+// checks if the input under the recommended length
+    if (!checkLength(input_PWD_Value, recommended)){
+        console.log("Password is a bit short, recommended length: " + recommended);
+        semiCorrect(output, "Password is a bit short, recommended length: " + recommended);
+    }else{
+        Correct(output, "Password Accepted");
+    }
+
     return true;
 }
 
@@ -202,18 +246,11 @@ function validateName(){
     last_name = document.getElementById("lname").value;
     output_first = document.getElementById("fname-output");
     output_last = document.getElementById("lname-output");
-    output_last.innerHTML = "yoyoyoyoy";
 
 // check if the input is not empty. Redunded because the form has REQUIRED
     if (emptyString(first_name)){
         console.log("empty first name");
         Incorrect(output_first, "Empty first name");
-        return false;
-    }
-
-    if (emptyString(last_name)){
-        console.log("empty last name");
-        Incorrect(output_last, "Empty last name");
         return false;
     }
 
@@ -224,15 +261,22 @@ function validateName(){
         return false;
     }
 
-    if (containsNumber(last_name)){
-        console.log("last name contains number");
-        Incorrect(output_last, "Last name contains a number");
-        return false;
-    }
-
     if (containsSpecialChar(first_name)){
         console.log("first name contains special character");
         Incorrect(output_first, "First name contains a special character");
+        return false;
+    }
+    Correct(output_first, "First name accepted");
+    
+    if (emptyString(last_name)){
+        console.log("empty last name");
+        Incorrect(output_last, "Empty last name");
+        return false;
+    }
+
+    if (containsNumber(last_name)){
+        console.log("last name contains number");
+        Incorrect(output_last, "Last name contains a number");
         return false;
     }
 
@@ -242,7 +286,6 @@ function validateName(){
         return false;
     }
 
-    Correct(output_first, "First name accepted");
     Correct(output_last, "Last name accepted");
     return true;
 }
@@ -251,11 +294,15 @@ function validateName(){
 // this function is technically not really needed because we can just set the first option as default
 function validateCountry(){
     input_country = document.getElementById("country").value;
+    const output = document.getElementById("country-output");
 
     if (input_country == "default"){
         console.log("country not choosen");
-        return false
+        Incorrect(output, "No country has been choosen");
+        return false;
     }
+
+    Correct(output, "Country choosen");
 
     return true;
 }
@@ -265,19 +312,31 @@ function validateGender(){
     input_male = document.getElementById("male").checked;
     input_female = document.getElementById("female").checked;
     input_other = document.getElementById("other").checked;
-    
-    return input_male || input_female || input_other;
+    const output = document.getElementById("gender-output");
+
+    const success = input_male || input_female || input_other;
+
+    if (success) {
+        Correct(output, "Correct chosen a gender");
+    }else{
+        Incorrect(output, "Please select a gender");
+    }
+    return success;
 }
 
 // function for checking if a language is choosen.
 // this function is technically not really needed because we can just set the first option as default
 function validateLanguage(){
     input = document.getElementById("language").value;
+    const output = document.getElementById("language-output");
 
     if (input == "default"){
-        console.log("language not choosen");
+        console.log("language not chosen");
+        Incorrect(output, "No language has been chosen");
         return false;
     }
+
+    Correct(output, "Language Chosen");
 
     return true;
 }
@@ -292,12 +351,35 @@ function validateEMail(){
         return false;
     }
 
-    if (!/@/.test(input)){
+
+    const parts = input.split("@");
+    if (parts.length < 2){
         console.log("Email doesn't contain @");
         Incorrect(output, "E-mail field doesn't contain @");
         return false;
     }
 
+    if (parts.length > 2){
+        console.log("E-mail field contains too many @");
+        Incorrect(output, "E-mail field contains too many @");
+        return false;
+    }
+
+    const subParts = parts[1].split(".");
+    if (subParts.length < 2){
+        console.log("E-mail doesn't contain '.' after @");
+        Incorrect(output, "E-mail doesn't contain '.' after @");
+        return false;
+    }
+
+    const lengthPart = subParts[subParts.length-1].length;
+    if (lengthPart < 2 || lengthPart > 4){
+        console.log("E-mail doesn't contain the right amount of characters after the '.'");
+        Incorrect(output, "E-mail doesn't contain the right amount of characters after the '.'");
+        return false;
+    }
+
+    Correct(output, "E-mail fits criteria");
     return true;
 }
 
@@ -311,6 +393,11 @@ function Correct(node, text){
 function Incorrect(node, text){
     node.innerHTML = text;
     node.className = "input-wrong";
+}
+
+function semiCorrect(node, text){
+    node.innerHTML = text;
+    node.className = "input-semiCorrect";
 }
 
 // function for loading the file content
@@ -357,7 +444,7 @@ function alertInfo(){
     text += "Gender: " + gender + "\n";
     text += "Language: " + language + "\n";
     text += "Profile picture: " + image + "\n";
-    text += "Bio: " + bio + "\n";
+    text += "Bio: " + bio;
     alert(text);
     return false;
 }

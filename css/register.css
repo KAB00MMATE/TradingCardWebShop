@@ -77,3 +77,13 @@
     background-color: green;
     color: white;
 }
+
+.input-semiCorrect{
+    padding: 1em;
+    background-color: orange;
+    color: white;
+}
+
+#password_user-output, #gender-output {
+    grid-column: 1/-1;
+}
