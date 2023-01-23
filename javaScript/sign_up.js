@@ -4,13 +4,30 @@ const path = "../documents/dictionary.txt";
 const dictionary = loadFile(path).split("\n");
 
 function validate(){
-    console.log("user ID check: " + validateUserID());
-    console.log("email check: " + validateEMail());
-    console.log("password check: " + validatePWD());
-    console.log("name check: ", validateName());
-    console.log("country check: ", validateCountry());
-    console.log("gender check: ", validateGender());
-    console.log("language check: ", validateLanguage());
+    const id = validateUserID();
+    console.log("user ID check: ", id);
+    const email = validateEMail();
+    console.log("email check: ", email);
+    const pwd = validatePWD();
+    console.log("password check: ", pwd);
+    const name = validateName();
+    console.log("name check: ", name);
+    const zip = validateZipCode();
+    console.log("zip code check: ", zip);
+    const country = validateCountry();
+    console.log("country check: ", country);
+    const gender = validateGender();
+    console.log("gender check: ", gender);
+    const language = validateLanguage();
+    console.log("language check: ", language);
+
+    const success = id && email && pwd && name && zip && country && gender && language;
+
+    if (success){
+        alertInfo();
+    }
+
+    return success;
 }
 
 function validateUserID() {
@@ -84,6 +101,7 @@ function isCapital(letter){
     if (letter == letter.toUpperCase()){
         return true;
     }
+    return false;
 }
 
 // checks if the input is a lowercase letter
@@ -97,6 +115,7 @@ function isLowerCase(letter){
     if (letter == letter.toLowerCase()){
         return true;
     }
+    return false;
 }
 
 // return true if the word or char contains one of the special characters
@@ -287,6 +306,46 @@ function validateName(){
     }
 
     Correct(output_last, "Last name accepted");
+    return true;
+}
+
+function validateZipCode(){
+    const zipcode = document.getElementById("zip_code");
+    zipcode.value = zipcode.value.toUpperCase();
+    const input = zipcode.value;
+    const output = document.getElementById("zip_code-output");
+
+    if (emptyString(input)){
+        return true;        
+    }
+
+    if (input.length != 6){
+        console.log("length incorrect");
+        Incorrect(output, "Length is incorrect");
+        return false;
+    }
+
+    if (!checkZip(input)){
+        console.log("Doesn't fit the format '1234AB'");
+        Incorrect(output, "Doesn't fit the format '1234AB'");
+        return false
+    }
+
+    Correct(output, "Zip code fits criteria");
+    return true;
+}
+
+function checkZip(input){
+    for (i = 0; i < 4; i++){
+        if (!isNumber(input.charAt(i))){
+            return false;
+        }
+    }
+    for (i = 4; i < 6; i++){
+        if (!isCapital(input.charAt(i))){
+            return false;
+        }
+    }
     return true;
 }
 
