@@ -67,7 +67,7 @@
 }
 
 .stats {
-    /* display: none; */
+    display: none;
 
     padding: 1em;
     border: 1px solid;
