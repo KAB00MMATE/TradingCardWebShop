@@ -38,13 +38,13 @@ function validate(){
 }
 
 function addingEvents(){
-    console.log("adding Events");
+    console.log("Adding Events");
     const userID = document.getElementById("userID");
     userID.oninput = validateUserID;
     const pwd = document.getElementById("password_user");
     pwd.oninput = validatePWD;
     const pwd2 = document.getElementById("password_user2");
-    pwd.oninput = validatePWD;
+    pwd2.oninput = validatePWD;
     const fname = document.getElementById("fname");
     fname.oninput = validateName;
     const lname = document.getElementById("lname");
@@ -57,10 +57,14 @@ function addingEvents(){
     language.oninput = validateLanguage;
     const email = document.getElementById("email_user");
     email.oninput = validateEMail;
+
+    const genders = document.querySelectorAll("input[name='gender']");
+    genders.forEach(element => {
+        element.oninput = validateGender;
+    });
 }
 
 function validateUserID() {
-    console.log("validating id");
     const min = 5;
     const max = 12;
     input_userID_Value = document.getElementById("userID").value;
@@ -219,16 +223,6 @@ function validatePWD() {
     input_PWD2_Value = document.getElementById("password_user2").value;
 
     output = document.getElementById("password_user-output");
-
-// checks if both passwords are the same
-    if (input_PWD_Value !== input_PWD2_Value){
-        console.log("Passwords are not the same");
-        console.log("PWD1: " + input_PWD_Value);
-        console.log("PWD2: " + input_PWD2_Value);
-        Incorrect(output, "Passwords are not the same");
-        return false;
-    }
-
     
 // checks if the input is empty, this is technically not needed. Because we can just use REQUIRED
     if (emptyString(input_PWD_Value)){
@@ -278,6 +272,15 @@ function validatePWD() {
         Incorrect(output, "Password has a word in it");
         return false;
     }
+
+// checks if both passwords are the same
+if (input_PWD_Value !== input_PWD2_Value){
+    console.log("Passwords are not the same");
+    console.log("PWD1: " + input_PWD_Value);
+    console.log("PWD2: " + input_PWD2_Value);
+    Incorrect(output, "Passwords are not the same");
+    return false;
+}
 
 // checks if the input under the recommended length
     if (!checkLength(input_PWD_Value, recommended)){
@@ -487,6 +490,19 @@ function Incorrect(node, text){
 function semiCorrect(node, text){
     node.innerHTML = text;
     node.className = "input-semiCorrect";
+}
+
+function resetNode(node){
+    node.innerHTML = "";
+    node.className = "";
+}
+
+function resetAllOutput(){
+    const allOutputs = document.querySelectorAll(".input-wrong, .input-correct, .input-semiCorrect");
+    allOutputs.forEach(element => {
+        resetNode(element);
+    });
+    console.log("Reset all output fields");
 }
 
 // function for loading the file content
