@@ -196,8 +196,9 @@ function containsNumber(word){
     return false;
 }
 
-function isNumber(letter){
-    return !isNaN(letter*69);
+// only works on a single letter
+function isNumber(letter){    
+    return !isNaN(parseInt(letter));
 }
 
 // return true if the word ends with a number or a special character
@@ -299,46 +300,56 @@ function validateName(){
     output_first = document.getElementById("fname-output");
     output_last = document.getElementById("lname-output");
 
+    const success1 = validateFirstName(first_name, output_first);
+    const success2 = validateLastName(last_name, output_last);
+
+    return success1 && success2;
+}
+
+function validateFirstName(input, output){
 // check if the input is not empty. Redunded because the form has REQUIRED
-    if (emptyString(first_name)){
+    if (emptyString(input)){
         console.log("empty first name");
-        Incorrect(output_first, "Empty first name");
+        Incorrect(output, "Empty first name");
         return false;
     }
 
 // this system is not bulletproof. If you enter a character that is not in the list, the input will get accepted.
-    if (containsNumber(first_name)){
+    if (containsNumber(input)){
         console.log("first name contains number");
-        Incorrect(output_first, "First name contains a number");
+        Incorrect(output, "First name contains a number");
         return false;
     }
 
-    if (containsSpecialChar(first_name)){
+    if (containsSpecialChar(input)){
         console.log("first name contains special character");
-        Incorrect(output_first, "First name contains a special character");
+        Incorrect(output, "First name contains a special character");
         return false;
     }
-    Correct(output_first, "First name accepted");
-    
-    if (emptyString(last_name)){
+    Correct(output, "First name accepted");
+    return true;
+}
+
+function validateLastName(input, output){
+    if (emptyString(input)){
         console.log("empty last name");
-        Incorrect(output_last, "Empty last name");
+        Incorrect(output, "Empty last name");
         return false;
     }
 
-    if (containsNumber(last_name)){
+    if (containsNumber(input)){
         console.log("last name contains number");
-        Incorrect(output_last, "Last name contains a number");
+        Incorrect(output, "Last name contains a number");
         return false;
     }
 
-    if (containsSpecialChar(last_name)){
+    if (containsSpecialChar(input)){
         console.log("last name contains special character");
-        Incorrect(output_last, "Last name contains a special character");
+        Incorrect(output, "Last name contains a special character");
         return false;
     }
 
-    Correct(output_last, "Last name accepted");
+    Correct(output, "Last name accepted");
     return true;
 }
 
