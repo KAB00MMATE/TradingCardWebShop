@@ -349,6 +349,7 @@ function validateZipCode(){
     const output = document.getElementById("zip_code-output");
 
     if (emptyString(input)){
+        resetNode(output);
         return true;        
     }
 
