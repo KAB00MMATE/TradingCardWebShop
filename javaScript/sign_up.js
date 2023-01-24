@@ -3,6 +3,8 @@ const path = "../documents/dictionary.txt";
 
 const dictionary = loadFile(path).split("\n");
 
+let firstTime = true;
+
 function validate(){
     const id = validateUserID();
     console.log("user ID check: ", id);
@@ -27,10 +29,38 @@ function validate(){
         alertInfo();
     }
 
+    if (firstTime){
+        addingEvents();
+        firstTime = false;
+    }
+    
     return success;
 }
 
+function addingEvents(){
+    console.log("adding Events");
+    const userID = document.getElementById("userID");
+    userID.oninput = validateUserID;
+    const pwd = document.getElementById("password_user");
+    pwd.oninput = validatePWD;
+    const pwd2 = document.getElementById("password_user2");
+    pwd.oninput = validatePWD;
+    const fname = document.getElementById("fname");
+    fname.oninput = validateName;
+    const lname = document.getElementById("lname");
+    lname.oninput = validateName;
+    const zipcode = document.getElementById("zip_code");
+    zipcode.oninput = validateZipCode;
+    const country = document.getElementById("country");
+    country.oninput = validateCountry;
+    const language = document.getElementById("language");
+    language.oninput = validateLanguage;
+    const email = document.getElementById("email_user");
+    email.oninput = validateEMail;
+}
+
 function validateUserID() {
+    console.log("validating id");
     const min = 5;
     const max = 12;
     input_userID_Value = document.getElementById("userID").value;
@@ -63,7 +93,7 @@ function validateUserID() {
         return false;
     }
 
-    Correct(output, "User ID is accepted")
+    Correct(output, "User ID is accepted");
     return true;
 }
 
@@ -386,7 +416,7 @@ function validateGender(){
 // function for checking if a language is choosen.
 // this function is technically not really needed because we can just set the first option as default
 function validateLanguage(){
-    input = document.getElementById("language").value;
+    const input = document.getElementById("language").value;
     const output = document.getElementById("language-output");
 
     if (input == "default"){
@@ -401,7 +431,7 @@ function validateLanguage(){
 }
 
 function validateEMail(){
-    input = document.getElementById("email_user").value;
+    const input = document.getElementById("email_user").value;
     output = document.getElementById("email_user-output");
     
     if (emptyString(input)){
