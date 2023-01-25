@@ -94,16 +94,17 @@
 
         <div class="main" id="main-body">
             <div id="register-block">
-                <form action="index.html" onsubmit="validate()" autocomplete="on" method="post">
+                <form action="" onsubmit="return false;" autocomplete="on">
                     <h1>Register</h1>
                     <fieldset class="input-adjusted">
                         <legend>User ID</legend>
-                        <input type="text" id="userID" name="userID" value="69420" minlength="5" maxlength="12" required  autofocus>
+                        <input type="text" id="userID" name="userID" placeholder="User1234#" autofocus title="required and must be of length 5 to 12, must start with a capital letter and
+                        end with a number or special character">
                         <div id="userID-output"></div>
                     </fieldset>
                     <fieldset class="input-adjusted">                        
                         <legend>E-mail</legend>
-                        <input type="email" name="email_user" id="email_user" required placeholder="bob@gmail.com">
+                        <input type="email" name="email_user" id="email_user" placeholder="bob@gmail.com" title="required and must be a valid email ID">
                         <div id="email_user-output"></div>
                     </fieldset>
 
@@ -111,11 +112,11 @@
                         <legend>Password</legend>
                         <div>
                             <label for="password_user">New Password</label>
-                            <input type="password" name="password_user" id="password_user" required placeholder="Welcome1" minlength="12">
+                            <input type="password" name="password_user" id="password_user" placeholder="Welcome1" minlength="12" title="required and at least 12 characters long, but 14 or more is better. A combination of uppercase letters, lowercase letters, numbers, and symbols. Not a word that can be found in a dictionary or the name of a person">
                         </div>
                         <div>
                             <label for="password_user2">Repeat Password</label>
-                            <input type="password" name="password_user2" id="password_user2" required placeholder="Welcome1" minlength="12">
+                            <input type="password" name="password_user2" id="password_user2" placeholder="Welcome1" minlength="12" title="required and at least 12 characters long, but 14 or more is better. A combination of uppercase letters, lowercase letters, numbers, and symbols. Not a word that can be found in a dictionary or the name of a person">
                         </div>
                         <div id="password_user-output"></div>
                     </fieldset>
@@ -124,11 +125,11 @@
                         <legend>Name</legend>
                         <div>
                             <label for="fname">First name</label>
-                            <input type="text" name="fname" id="fname" required placeholder="Bob">
+                            <input type="text" name="fname" id="fname" placeholder="Bob" title="required and must contain the alphabet only">
                         </div>
                         <div>
                             <label for="lname">Last name</label>
-                            <input type="text" name="lname" id="lname" required placeholder="Bakker">
+                            <input type="text" name="lname" id="lname" placeholder="de Bouwer" title="required and must contain the alphabet only">
                         </div>
                         <div id="fname-output"></div>
                         <div id="lname-output"></div>
@@ -163,10 +164,11 @@
                         <div>
                             <label for="zip_code">ZIP Code</label>
                             <input type="text" name="zip_code" id="zip_code">
+                            <div id="zip_code-output"></div>
                         </div>
                         <div>
                             <label for="country">Country</label>
-                            <select name="country" id="country">
+                            <select name="country" id="country" title="required">
                                 <option value="default">Choose a country</option>
                                 <option value="netherlands">Netherlands</option>
                                 <option value="uk">United Kingdom</option>
@@ -181,7 +183,7 @@
                     <fieldset class="grid3-way">
                         <legend>Gender</legend>
                         <div>
-                            <input type="radio" name="gender" checked id="male">
+                            <input type="radio" name="gender" id="male">
                             <label for="male">Male</label>
                         </div>
                         <div>
@@ -198,7 +200,7 @@
                     <fieldset>
                         <legend>Personality</legend>
                         <label for="language">Language</label>
-                        <select name="language" id="language">
+                        <select name="language" id="language" title="required">
                             <option value="default">Pick a language</option>
                             <option value="dutch">Dutch</option>
                             <option value="english">English</option>
@@ -214,9 +216,8 @@
                     </fieldset>
 
                     <div id="btn-block">
-                        <button class="submit-btn" type="reset">Reset</button>
-                        <button class="submit-btn" type="button" onclick="validate()">Validate</button>
-                        <button class="submit-btn" type="submit">Create Account</button>
+                        <button class="submit-btn" type="reset" onclick="resetAllOutput()">Reset</button>
+                        <button class="submit-btn" type="submit" onclick="validate()">Create Account</button>
                     </div>
                 </form>
             </div>
