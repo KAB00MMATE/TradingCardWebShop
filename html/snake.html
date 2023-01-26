@@ -11,7 +11,6 @@
     <link rel="icon" href="../pictures/logo.png">
     <title>TradingCard | Snake</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
@@ -21,8 +20,6 @@
         <div id="header-and-nav">
             <div class="main" id="main-header">
                 <header>
-
-                    <!-- <header-component></header-component> -->
                     <a href="index.html">
                         <img src="../pictures/logo.png" width="100px" alt="logo" id="logo">
                     </a>
@@ -100,6 +97,13 @@
             <div id="main-container">
                 
                 <canvas id="snake-canvas" width="600px" height="400px" style="border: 2px solid black;"></canvas>
+                <div style="color:white;">Your length: <output id="score">5</output><br>
+                    Apples eaten: <output id="apples-eaten">0</output><br>
+                    speed: <output id="speed">10</output> frames per second</div>
+                <div id="button-block">
+                    <button type="button" onclick="speedUp()">Speed up</button>
+                    <button type="button" onclick="speedDown()">Speed down</button>
+                </div>
             </div>
 
         </div>

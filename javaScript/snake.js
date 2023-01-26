@@ -1,5 +1,10 @@
 canvas = document.getElementById("snake-canvas");
 document.addEventListener("keydown", user_input);
+lengthDiv = document.getElementById("score");
+speedDiv = document.getElementById("speed");
+appleDiv = document.getElementById("apples-eaten");
+applesEaten = 0;
+
 output = canvas.getContext("2d");
 
 width = canvas.clientWidth;
@@ -18,7 +23,9 @@ player_posY = 10;
 apple_posX = Math.floor(Math.random()*sizeX);
 apple_posY = Math.floor(Math.random()*sizeY);
 
-setInterval(cycle, 1000/10);
+speed = 10;
+
+intervalID = setInterval(cycle, 1000/speed);
 
 win = 50;
 
@@ -49,17 +56,15 @@ function cycle(){
     output.fillStyle="black";
     output.fillRect(0,0, canvas.width, canvas.height);
     
+    output.fillStyle="lime";
+    output.fillRect(player_posX*tileSize, player_posY*tileSize, tileSize, tileSize);
     output.fillStyle="green";
-    // output.fillRect(player_posX*tileSize, player_posY*tileSize, tileSize, tileSize);
 
     for (i = 0; i < tails.length; i++){
         output.fillRect(tails[i].x*tileSize, tails[i].y*tileSize,tileSize, tileSize);
         if (tails[i].x == player_posX && tails[i].y == player_posY){
             tail = tail - i;
-        }
-        if (i == tails.length-1){
-            output.fillStyle="lime";
-            output.fillRect(tails[i].x*tileSize, tails[i].y*tileSize,tileSize, tileSize);
+            lengthDiv.value = tail;
         }
     }
     
@@ -69,8 +74,11 @@ function cycle(){
     }
 
     if (player_posX == apple_posX && player_posY == apple_posY){
+        applesEaten++;
+        appleDiv.value = applesEaten;
         newApple();
         appleAudio.play();
+        addTail();
         if (tail == win){
             winAudio.play();
             tail = 5;
@@ -87,12 +95,19 @@ function cycle(){
 function addTail(){
     tail++;
     tails.push({x:player_posX, y:player_posY});
+    lengthDiv.value = tail;
 }
 
 function newApple(){
     apple_posX = Math.floor(Math.random()*sizeX);
     apple_posY = Math.floor(Math.random()*sizeY);
-    addTail();
+
+    for (i = 0; i < tails.length; i++){
+        if (tails[i].x == apple_posX && tails[i].y == apple_posY){
+            newApple()
+            break;
+        } 
+    }
 }
 
 function user_input(input){
@@ -121,5 +136,21 @@ function user_input(input){
                 player_dirY = 1;
             }
             break;
+    }
+}
+
+function speedUp(){
+    speed++;
+    clearInterval(intervalID);
+    intervalID = setInterval(cycle, 1000/speed);
+    speedDiv.value = speed;
+}
+
+function speedDown(){
+    if (speed != 1){
+        speed--;
+        clearInterval(intervalID);
+        intervalID = setInterval(cycle, 1000/speed);
+        speedDiv.value = speed;
     }
 }
